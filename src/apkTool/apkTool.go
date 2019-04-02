@@ -40,6 +40,9 @@ func main() {
 		return
 	}
 	unZipApk(game, gameApkPath)
+	for _, itemApk := range channel {
+		fmt.Println("开始打包，渠道【" + itemApk.Id + "】")
+	}
 
 }
 
