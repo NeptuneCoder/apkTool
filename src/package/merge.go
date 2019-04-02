@@ -7,9 +7,38 @@ import (
 	"io/ioutil"
 	"log"
 	"model"
+	"strings"
 )
 
 func RenamePackage(gchannel *model.GameChannel, tempPath string) {
+	xmlPath := tempPath + "/AndroidManifest.xml"
+	content, err := ioutil.ReadFile(xmlPath)
+	newPageName := ""
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := GetOldPackageName(tempPath)
+	fmt.Println("content :", name)
+	if gchannel.PackageName == "" || gchannel.Suffix == "" {
+		newPageName = name
+		return
+	}
+	if gchannel.PackageName != "" || gchannel.Suffix == "" {
+		newPageName = gchannel.PackageName
+
+	}
+	if gchannel.PackageName == "" || gchannel.Suffix != "" {
+		newPageName = name + gchannel.Suffix
+	}
+	if gchannel.PackageName != "" || gchannel.Suffix != "" {
+		newPageName = gchannel.PackageName + gchannel.Suffix
+	}
+	all := strings.ReplaceAll(string(content), name, newPageName)
+	ioutil.WriteFile(xmlPath, []byte(all), 0777)
+}
+
+func GetOldPackageName(tempPath string) string {
 	xmlPath := tempPath + "/AndroidManifest.xml"
 	content, err := ioutil.ReadFile(xmlPath)
 	if err != nil {
@@ -20,17 +49,12 @@ func RenamePackage(gchannel *model.GameChannel, tempPath string) {
 		switch token := t.(type) {
 		// 处理元素开始（标签）
 		case xml.StartElement:
-			name := token.Name.Local
-			fmt.Printf("Token name: %s\n", token.Name)
-			fmt.Printf("Token name: %s\n", name)
-			fmt.Printf("Token len: %d\n", len(token.Attr))
 			for _, attr := range token.Attr {
 				attrName := attr.Name.Local
 				if "package" == attrName {
-					attr.Value = gchannel.PackageName + gchannel.Suffix
+					return attr.Value
 				}
 
-				fmt.Printf("An attribute is: %s %s\n", attrName, attr.Value)
 			}
 		// 处理元素结束（标签）
 		case xml.EndElement:
@@ -42,6 +66,7 @@ func RenamePackage(gchannel *model.GameChannel, tempPath string) {
 		default:
 			// ...
 		}
-	}
 
+	}
+	return ""
 }
