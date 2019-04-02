@@ -1,0 +1,14 @@
+{
+  "games": [
+    {
+      "name": "聚合Demo",
+      "apktoolVersion": "2-3-4",
+      "debug": "1",
+      "folder": "foyoentdemo",
+      "foyoentid": "1",
+      "gameMainName": "",
+      "id": 0,
+      "orientation": "landscape"
+    }
+  ]
+}

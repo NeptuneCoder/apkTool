@@ -1,0 +1,79 @@
+{
+  "channels": [
+    {
+      "name": "飓风",
+      "icon": "rb",
+      "id": "jufeng",
+      "splash": "true",
+      "param": [
+        {
+          "name": "FoyoentID",
+          "value": "5008"
+        },
+        {
+          "name": "FoyoentCID",
+          "value": "1042"
+        },
+        {
+          "name": "PAY_ACTION",
+          "value": "tulongzhi.jufeng.MainActivity"
+        }
+      ],
+      "metaData": [
+        {
+          "name": "CID",
+          "value": "5qwan"
+        },
+        {
+          "name": "PID",
+          "value": "5qwan"
+        },
+        {
+          "name": "APPID",
+          "value": "tulongzhi"
+        },
+        {
+          "name": "APP_CONFIG",
+          "value": "data/www/config"
+        }
+      ]
+    },{
+      "name": "飓风",
+      "icon": "rb",
+      "id": "ceshi",
+      "splash": "true",
+      "param": [
+        {
+          "name": "FoyoentID",
+          "value": "5008"
+        },
+        {
+          "name": "FoyoentCID",
+          "value": "1042"
+        },
+        {
+          "name": "PAY_ACTION",
+          "value": "tulongzhi.jufeng.MainActivity"
+        }
+      ],
+      "metaData": [
+        {
+          "name": "CID",
+          "value": "5qwan"
+        },
+        {
+          "name": "PID",
+          "value": "5qwan"
+        },
+        {
+          "name": "APPID",
+          "value": "tulongzhi"
+        },
+        {
+          "name": "APP_CONFIG",
+          "value": "data/www/config"
+        }
+      ]
+    }
+  ]
+}

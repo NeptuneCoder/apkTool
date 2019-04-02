@@ -1,0 +1,4 @@
+{
+  "apkToolPath": "./apktools/apktool2-3-4.jar",
+  "frameworkRes": "./apktools/framework-res.apk"
+}
