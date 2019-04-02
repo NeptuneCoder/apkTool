@@ -117,15 +117,15 @@ type Param struct {
 	Value string `json:value`
 }
 type ChannelArray struct {
-	Channels []*Channel `json:channels`
+	Channels []*GameChannel `json:channels`
 }
 
-func (channelArray *ChannelArray) GetChannel(channelId string) []*Channel {
+func (channelArray *ChannelArray) GetChannel(channelId string) []*GameChannel {
 	if "all" == channelId {
 		return channelArray.Channels
 	} else {
 		splits := Split(channelId, ",")
-		byIds := make([]*Channel, len(splits))
+		byIds := make([]*GameChannel, len(splits))
 		for i := 0; i < len(splits); i++ {
 			byId := channelArray.GetChannelById(splits[i])
 			byIds[i] = byId
@@ -134,7 +134,7 @@ func (channelArray *ChannelArray) GetChannel(channelId string) []*Channel {
 		return byIds
 	}
 }
-func (channelArray *ChannelArray) GetChannelById(id string) *Channel {
+func (channelArray *ChannelArray) GetChannelById(id string) *GameChannel {
 	for _, v := range channelArray.Channels {
 		if v.Id == id {
 			return v
@@ -148,7 +148,7 @@ func (channelArray *ChannelArray) PrintlnAll() {
 	}
 }
 
-type Channel struct {
+type GameChannel struct {
 	Name     string     `json:name`
 	Icon     string     `json:icon`
 	Id       string     `json:id`
@@ -222,8 +222,9 @@ type SdkRootConfig struct {
 	Config SdkConfig `json:config`
 }
 type SdkConfig struct {
-	Operations []plugin    `json:operations`
-	Plugins    []operation `json:plugins`
+	Application string      `json:application`
+	Operations  []operation `json:operations`
+	Plugins     []plugin    `json:plugins`
 }
 
 type plugin struct {

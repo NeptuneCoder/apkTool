@@ -22,26 +22,10 @@ func ReadEnvConfig() (*model.Environment, error) {
 	return env, nil
 }
 
-func ReadSdkConfig() (*model.SdkRootConfig, error) {
-
-	s := atfile.GetCurrentDirectory() + "/config/"
-	fmt.Println(s)
-
-	data, err := atfile.ReadConfig(s, "games.json")
-	if err != nil {
-		fmt.Println(err)
-		return nil, err
-	}
-	games := new(model.Games)
-	json.Unmarshal(data, &games)
-
-	return nil, nil
-}
-
 /**
 	加载所有游戏列表
  */
-func ReadGamsConfig() (*model.Games, error) {
+func ReadGamesConfig() (*model.Games, error) {
 	s := atfile.GetCurrentDirectory() + "/games/"
 	data, err := atfile.ReadConfig(s, "games.json")
 	if err != nil {
@@ -67,4 +51,20 @@ func ReadGameChannel(gamePath string) (*model.ChannelArray, error) {
 	channels := new(model.ChannelArray)
 	json.Unmarshal(data, &channels)
 	return channels, nil
+}
+
+/**
+	加载选中的游戏的渠道列表
+ */
+func ReadSdkConfig(sdkPathName string) (*model.SdkRootConfig, error) {
+	s := atfile.GetCurrentDirectory() + "/config/sdk/" + sdkPathName
+
+	data, err := atfile.ReadConfig(s, "config.json")
+	if err != nil {
+		fmt.Println(err)
+		return nil, err
+	}
+	rootConfig := new(model.SdkRootConfig)
+	json.Unmarshal(data, &rootConfig)
+	return rootConfig, nil
 }

@@ -12,7 +12,7 @@ import (
 
 func main() {
 	env, _ := parse.ReadEnvConfig()
-	gamesConfig, _ := parse.ReadGamsConfig()
+	gamesConfig, _ := parse.ReadGamesConfig()
 	gamesConfig.PrintlnAll()
 	gameId := keybordIn("请选择一个游戏(输入gameId)：")
 	game := gamesConfig.GetGameConfig(gameId)
@@ -30,7 +30,7 @@ func main() {
 		fmt.Println("没有找到您输入的渠道")
 		return
 	}
-	createNewFolder("work")
+	_ = utils.CreateNewFolder(atfile.GetCurrentDirectory() + "/" + "work")
 	//instanllFramework-res.apk
 	installFrameworkRes(env)
 	//获取母包的路径
@@ -39,9 +39,22 @@ func main() {
 		fmt.Println("当前文件夹下面没有添加apk文件；请添加游戏母包apk!")
 		return
 	}
+	fmt.Println("解压apk包")
 	unZipApk(game, gameApkPath)
-	for _, itemApk := range channel {
-		fmt.Println("开始打包，渠道【" + itemApk.Id + "】")
+
+	for _, itemChannel := range channel {
+		fmt.Println("开始打包，渠道【" + itemChannel.Id + "】")
+		//读取sdk的配置信息
+
+		rootConfig, _ := parse.ReadSdkConfig(itemChannel.Id)
+		fmt.Println(rootConfig)
+
+		fmt.Println("清空temp目录")
+		tempPath := utils.CreateNewFolder(atfile.GetCurrentDirectory() + "/" + "work/temp")
+		//复制原始的文件
+		fmt.Println("复制原始文件到新的目录:", tempPath)
+		fmt.Println(tempPath)
+		utils.CopyBakToTemp(atfile.GetCurrentDirectory()+"/"+"bak", tempPath)
 	}
 
 }
@@ -64,30 +77,6 @@ func Exec(cmdStr string, args []string) {
 		fmt.Println("cmd.Output: ", err)
 		return
 	}
-}
-
-/**
-	创建一个工作目录
- */
-func createNewFolder(workPath string) {
-	path := atfile.GetCurrentDirectory() + "/" + workPath
-	boo, _ := PathExists(path)
-	if boo {
-		_ = os.RemoveAll(path)
-	}
-	_ = os.Mkdir(path, os.ModePerm)
-}
-
-// 判断文件夹是否存在
-func PathExists(path string) (bool, error) {
-	_, err := os.Stat(path)
-	if err == nil {
-		return true, nil
-	}
-	if os.IsNotExist(err) {
-		return false, nil
-	}
-	return false, err
 }
 
 func keybordIn(tip string) string {

@@ -29,6 +29,7 @@
         "name": "com.foyoent.jifeng.plugin.FoyoentJifengPay",
         "type": "2"
       }
-    ]
+    ],
+    "application": ""
   }
 }
