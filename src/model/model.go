@@ -149,12 +149,15 @@ func (channelArray *ChannelArray) PrintlnAll() {
 }
 
 type GameChannel struct {
-	Name     string     `json:name`
-	Icon     string     `json:icon`
-	Id       string     `json:id`
-	Splash   string     `json:splash`
-	Param    []Param    `json:param`
-	MetaData []MetaData `json:metaData`
+	PackageName string     `json:packageName`
+	Keystore    string     `json:keystore`
+	Suffix      string     `json:suffix` //包名后缀
+	Name        string     `json:name`
+	Icon        string     `json:icon`
+	Id          string     `json:id` //渠道号
+	Splash      bool     `json:splash`
+	Param       []Param    `json:param`
+	MetaData    []MetaData `json:metaData`
 }
 
 /**
@@ -188,7 +191,7 @@ type KeyStoreConfig struct {
     "operations": [
       {
         "step": "1",
-        "type": "merge",
+        "type": "package",
         "from": "SDKManifest.xml",
         "to": "AndroidManifest.xml"
       },

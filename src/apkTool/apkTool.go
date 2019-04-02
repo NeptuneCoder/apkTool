@@ -6,6 +6,7 @@ import (
 	"model"
 	"os"
 	"os/exec"
+	"package"
 	"parse"
 	"utils"
 )
@@ -55,6 +56,9 @@ func main() {
 		fmt.Println("复制原始文件到新的目录:", tempPath)
 		fmt.Println(tempPath)
 		utils.CopyBakToTemp(atfile.GetCurrentDirectory()+"/"+"bak", tempPath)
+		fmt.Println("修改包名")
+		pack.RenamePackage(itemChannel, tempPath)
+
 	}
 
 }

@@ -5,6 +5,8 @@
       "icon": "rb",
       "id": "foyoent",
       "splash": "true",
+      "suffix": ".yehua",
+      "packageName": "sg.dhxy.android.game",
       "param": [
         {
           "name": "FoyoentID",
@@ -37,7 +39,8 @@
           "value": "data/www/config"
         }
       ]
-    },{
+    },
+    {
       "name": "飓风",
       "icon": "rb",
       "id": "ceshi",
