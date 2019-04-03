@@ -224,19 +224,20 @@ type KeyStoreConfig struct {
 type SdkRootConfig struct {
 	Config SdkConfig `json:config`
 }
+
 type SdkConfig struct {
 	Application string      `json:application`
-	Operations  []operation `json:operations`
-	Plugins     []plugin    `json:plugins`
+	Operations  []Operation `json:operations`
+	Plugins     []Plugin    `json:plugins`
 }
 
-type plugin struct {
+type Plugin struct {
 	Name string `json:name`
-	Mold string `json:type`
+	Mold string `json:mold`
 }
-type operation struct {
+type Operation struct {
 	Step string `json:step`
-	Mold string `json:type`
+	Mold string `json:mold`
 	From string `json:from`
 	To   string `json:to`
 }

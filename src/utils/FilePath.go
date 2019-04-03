@@ -8,6 +8,36 @@ import (
 	"strings"
 )
 
+func CopyJar(fromPath, toPath string) {
+	_ = filepath.Walk(fromPath, func(path string, info os.FileInfo, err error) error {
+		//检测目录正确性
+		srcInfo, err := os.Stat(path)
+		if err != nil {
+			fmt.Println(err.Error())
+			return nil
+		}
+
+		if srcInfo.IsDir() {
+			res, _ := filepath.Rel(fromPath, path)
+			newLibPath := toPath + "/" + GetCurPath(res)
+			CreateNewFolder(newLibPath)
+		} else {
+			res, _ := filepath.Rel(fromPath, path)
+			//TODO copy
+			newLibPath := toPath + "/" + res
+			CopyFile(path, newLibPath)
+		}
+		return nil
+	})
+}
+func GetCurPath(path string) string {
+	if path == "" {
+		return ""
+	} else {
+		return path + "/"
+	}
+
+}
 func CopyBakToTemp(fromPath, toPath string, ReplaceStr func() string) {
 	_ = filepath.Walk(fromPath, func(path string, info os.FileInfo, err error) error {
 		//检测目录正确性

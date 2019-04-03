@@ -3,19 +3,19 @@
     "operations": [
       {
         "step": "1",
-        "type": "merge",
+        "mold": "merge",
         "from": "SDKManifest.xml",
         "to": "AndroidManifest.xml"
       },
       {
         "step": "2",
-        "type": "copylib",
+        "mold": "copylib",
         "from": "libs",
         "to": "lib"
       },
       {
         "step": "3",
-        "type": "copy",
+        "mold": "copy",
         "from": "res",
         "to": "res"
       }
@@ -23,11 +23,11 @@
     "plugins": [
       {
         "name": "com.foyoent.jifeng.plugin.FoyoentJifengUser",
-        "type": "1"
+        "mold": "1"
       },
       {
         "name": "com.foyoent.jifeng.plugin.FoyoentJifengPay",
-        "type": "2"
+        "mold": "2"
       }
     ],
     "application": ""

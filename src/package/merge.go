@@ -11,6 +11,25 @@ import (
 	"utils"
 )
 
+func ExecuteOperation(sdkPath, tempPath string, operations []model.Operation) {
+	fmt.Println("sdkPath:", sdkPath)
+	for _, operation := range operations {
+		if "replaceManifest" == operation.Mold {
+			manifestPath := tempPath + "/" + "AndroidManifest.xml"
+			utils.CopyFile(operation.From, manifestPath)
+		} else if "copylib" == operation.Mold {
+			fromPath := sdkPath + "/" + operation.From
+			toPath := tempPath + "/" + operation.To
+			fmt.Println("fromPath:", fromPath)
+			fmt.Println("toPath:", toPath)
+			utils.CreateNewFolder(toPath)
+			utils.CopyJar(fromPath, toPath)
+		} else {
+
+		}
+	}
+}
+
 func RenamePackage(gchannel *model.GameChannel, tempPath string) string {
 	xmlPath := tempPath + "/AndroidManifest.xml"
 	content, err := ioutil.ReadFile(xmlPath)
@@ -23,7 +42,7 @@ func RenamePackage(gchannel *model.GameChannel, tempPath string) string {
 	fmt.Println("content :", oldPackName)
 	if gchannel.PackageName == "" || gchannel.Suffix == "" {
 		newPageName = oldPackName
-		return
+		return oldPackName
 	}
 	if gchannel.PackageName != "" || gchannel.Suffix == "" {
 		newPageName = gchannel.PackageName

@@ -46,9 +46,9 @@ func main() {
 	for _, itemChannel := range channel {
 		fmt.Println("开始打包，渠道【" + itemChannel.Id + "】")
 		//读取sdk的配置信息
-
-		rootConfig, _ := parse.ReadSdkConfig(itemChannel.Id)
-		fmt.Println(rootConfig)
+		sdkPath := atfile.GetCurrentDirectory() + "/config/sdk/" + itemChannel.Id
+		sdkConfig, _ := parse.ReadSdkConfig(sdkPath)
+		fmt.Println(sdkConfig)
 
 		fmt.Println("清空temp目录")
 		tempPath := utils.CreateNewFolder(atfile.GetCurrentDirectory() + "/" + "work/temp")
@@ -60,6 +60,11 @@ func main() {
 		})
 		fmt.Println("修改包名")
 		newPackageVal := pack.RenamePackage(itemChannel, tempPath)
+		fmt.Println("NewPageName:", newPackageVal)
+		fmt.Println("合并资源")
+		if len(sdkConfig.Config.Operations) != 0 {
+			pack.ExecuteOperation(sdkPath, tempPath, sdkConfig.Config.Operations)
+		}
 
 	}
 

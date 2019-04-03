@@ -57,9 +57,8 @@ func ReadGameChannel(gamePath string) (*model.ChannelArray, error) {
 	加载选中的游戏的渠道列表
  */
 func ReadSdkConfig(sdkPathName string) (*model.SdkRootConfig, error) {
-	s := atfile.GetCurrentDirectory() + "/config/sdk/" + sdkPathName
 
-	data, err := atfile.ReadConfig(s, "config.json")
+	data, err := atfile.ReadConfig(sdkPathName, "config.json")
 	if err != nil {
 		fmt.Println(err)
 		return nil, err
