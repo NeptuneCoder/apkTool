@@ -30,6 +30,15 @@
         "mold": "2"
       }
     ],
-    "application": ""
+    "application": "",
+    "rJars": [
+      {
+        "name": "com.example.demo"
+      },{
+        "name": "com.example.demo1"
+      },{
+        "name": "com.example.demo2"
+      }
+    ]
   }
 }

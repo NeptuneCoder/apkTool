@@ -32,7 +32,7 @@ func AddSplashImg(sdkPath, tempPath string, channel *model.GameChannel, game *mo
 	}
 	fmt.Println("splashImgPath  : ", splashImgPath)
 	fmt.Println("drawablePath  : ", drawablePath)
-	utils.CopyFile(splashImgPath, drawablePath+"/foyoentslpash.png")
+	utils.CopyFile(splashImgPath, drawablePath+"/ic_launcher.png")
 }
 
 func ExecuteOperation(sdkPath, tempPath string, operations []model.Operation) {

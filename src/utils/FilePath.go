@@ -62,7 +62,6 @@ func CopyBakToTemp(fromPath, toPath string, ReplaceStr func() string) {
 	})
 }
 func CopySmali(oldPackName, newPackName, fromPath, toPath string) {
-	fmt.Println("fromPath:", fromPath)
 	_ = filepath.Walk(fromPath, func(path string, info os.FileInfo, err error) error {
 		//检测目录正确性
 		srcInfo, err := os.Stat(path)
@@ -85,9 +84,7 @@ func CopySmali(oldPackName, newPackName, fromPath, toPath string) {
 
 			all := strings.ReplaceAll(string(content), oldPackName, newPackName)
 			ioutil.WriteFile(newFileName, []byte(all), 0777)
-			//TODO 读取老的文件内容，然后替换包名
-			//newPath := strings.ReplaceAll(res,, "")
-			//CopyFile(path, toPath+newPath)
+
 		}
 		return nil
 	})

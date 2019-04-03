@@ -1,13 +1,14 @@
 package main
 
 import (
+	"cmad"
 	"fmt"
 	"github.com/yanghai23/GoLib/atfile"
+	"jar2smali"
 	"model"
-	"os"
-	"os/exec"
 	"package"
 	"parse"
+	"rjar"
 	"utils"
 )
 
@@ -24,6 +25,8 @@ func main() {
 	}
 	channels, _ := parse.ReadGameChannel(game.Folder)
 	channels.PrintlnAll()
+	apkToolsPath := atfile.GetCurrentDirectory() + "/apktools/"
+	fmt.Println("apkToolsPath:", apkToolsPath)
 	//选中渠道名
 	channelId := keybordIn("请选择渠道(多个用逗号隔开，all为所有)：")
 	channel := channels.GetChannel(channelId)
@@ -31,7 +34,7 @@ func main() {
 		fmt.Println("没有找到您输入的渠道")
 		return
 	}
-	_ = utils.CreateNewFolder(atfile.GetCurrentDirectory() + "/" + "work")
+	workPath := utils.CreateNewFolder(atfile.GetCurrentDirectory() + "/" + "work")
 	//instanllFramework-res.apk
 	installFrameworkRes(env)
 	//获取母包的路径
@@ -51,11 +54,11 @@ func main() {
 		fmt.Println(sdkConfig)
 
 		fmt.Println("清空temp目录")
-		tempPath := utils.CreateNewFolder(atfile.GetCurrentDirectory() + "/" + "work/temp")
+		tempPath := utils.CreateNewFolder(atfile.GetCurrentDirectory() + "/work/temp")
 		//复制原始的文件
 		fmt.Println("复制原始文件到新的目录:", tempPath)
 		fmt.Println(tempPath)
-		utils.CopyBakToTemp(atfile.GetCurrentDirectory()+"/"+"bak", tempPath, func() string {
+		utils.CopyBakToTemp(atfile.GetCurrentDirectory()+"/bak", tempPath, func() string {
 			return "../../bak"
 		})
 		fmt.Println("修改包名")
@@ -72,31 +75,23 @@ func main() {
 		}
 
 		if itemChannel.IsIcon() {
-			pack.MergeIcon(sdkPath,tempPath,itemChannel)
+			pack.MergeIcon(sdkPath, tempPath, itemChannel)
 		}
-
+		fmt.Println("生成R文件")
+		rjar.ComplieR(apkToolsPath, tempPath, workPath, newPackageVal, &sdkConfig.Config)
+		libDir := tempPath + "/lib"
+		jar2smali.Jar2Smali(apkToolsPath, tempPath, libDir)
 	}
 
 }
 
 func unZipApk(game *model.Game, apkPath string) {
 	bakPath := atfile.GetCurrentDirectory() + "/" + "bak"
-	Exec("java", []string{"-jar", "-Xms512m", "-Xmx512m", "./apktools/" + "apktool" + game.GetApktoolVersion() + ".jar", "d", "-o", bakPath, apkPath})
+	cmad.Exec("java", []string{"-jar", "-Xms512m", "-Xmx512m", "./apktools/" + "apktool" + game.GetApktoolVersion() + ".jar", "d", "-o", bakPath, apkPath})
 
 }
 func installFrameworkRes(env *model.Environment) {
-	Exec("java", []string{"-jar", "-Xms512m", "-Xmx512m", env.ApkToolPath, "if", env.FrameworkRes})
-}
-
-func Exec(cmdStr string, args []string) {
-	cmd := exec.Command(cmdStr, args...)
-	cmd.Stdout = os.Stdout
-	cmd.Stderr = os.Stderr
-	err := cmd.Run()
-	if err != nil {
-		fmt.Println("cmd.Output: ", err)
-		return
-	}
+	cmad.Exec("java", []string{"-jar", "-Xms512m", "-Xmx512m", env.ApkToolPath, "if", env.FrameworkRes})
 }
 
 func keybordIn(tip string) string {

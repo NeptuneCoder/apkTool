@@ -243,11 +243,16 @@ type SdkConfig struct {
 	Application string      `json:application`
 	Operations  []Operation `json:operations`
 	Plugins     []Plugin    `json:plugins`
+	RJars       []RJar      `json:rJars`
 }
 
 type Plugin struct {
 	Name string `json:name`
 	Mold string `json:mold`
+}
+
+type RJar struct {
+	Name string `json:name`
 }
 type Operation struct {
 	Step string `json:step`
