@@ -2,12 +2,13 @@ package utils
 
 import (
 	"fmt"
+	"io/ioutil"
 	"os"
 	"path/filepath"
 	"strings"
 )
 
-func CopyBakToTemp(fromPath, toPath string) {
+func CopyBakToTemp(fromPath, toPath string, ReplaceStr func() string) {
 	_ = filepath.Walk(fromPath, func(path string, info os.FileInfo, err error) error {
 		//检测目录正确性
 		srcInfo, err := os.Stat(path)
@@ -19,30 +20,61 @@ func CopyBakToTemp(fromPath, toPath string) {
 		if srcInfo.IsDir() {
 			//TODO  创建目录
 			res, _ := filepath.Rel(toPath, path)
-			newPath := strings.ReplaceAll(res, "../../bak", "")
+			newPath := strings.ReplaceAll(res, ReplaceStr(), "")
 			CreateNewFolder(toPath + newPath)
 		} else {
 			//TODO copy
 			res, _ := filepath.Rel(toPath, path)
-			newPath := strings.ReplaceAll(res, "../../bak", "")
-
+			newPath := strings.ReplaceAll(res, ReplaceStr(), "")
 			CopyFile(path, toPath+newPath)
 		}
-
 		return nil
 	})
+}
+func CopySmali(oldPackName, newPackName, fromPath, toPath string) {
+	fmt.Println("fromPath:", fromPath)
+	_ = filepath.Walk(fromPath, func(path string, info os.FileInfo, err error) error {
+		//检测目录正确性
+		srcInfo, err := os.Stat(path)
+		if err != nil {
+			fmt.Println(err.Error())
+			return nil
+		}
+
+		if !srcInfo.IsDir() {
+			//TODO copy
+			res, _ := filepath.Rel(fromPath, path)
+			newFileName := toPath + "/" + res
+			//TODO 这里分为两步，第一步是copy老的smali文件到新的目录中
+			CopyFile(path, newFileName)
+			content, err := ioutil.ReadFile(newFileName)
+			if err != nil {
+				fmt.Println("ReadFile Err:", err)
+				return err
+			}
+
+			all := strings.ReplaceAll(string(content), oldPackName, newPackName)
+			ioutil.WriteFile(newFileName, []byte(all), 0777)
+			//TODO 读取老的文件内容，然后替换包名
+			//newPath := strings.ReplaceAll(res,, "")
+			//CopyFile(path, toPath+newPath)
+		}
+		return nil
+	})
+	os.RemoveAll(fromPath)
 }
 
 func CopyFile(srcName, targetName string) {
 	file, err := os.Open(srcName)
 	if err != nil {
-		fmt.Println(err)
+		fmt.Println("Open File:", err)
 	}
 	defer file.Close()
 
 	targetFile, err := os.Create(targetName)
 	if err != nil {
-		fmt.Println(err)
+		fmt.Println("CreateFile Err:", err)
+		return
 	}
 	defer file.Close()
 	buf := make([]byte, 1024) //创建一个初始容量为1024的slice,作为缓冲容器
@@ -60,11 +92,15 @@ func CopyFile(srcName, targetName string) {
 	创建一个工作目录
  */
 func CreateNewFolder(path string) string {
+	fmt.Println("path:", path)
 	boo, _ := PathExists(path)
 	if boo {
 		_ = os.RemoveAll(path)
 	}
-	_ = os.Mkdir(path, os.ModePerm)
+	err := os.MkdirAll(path, os.ModePerm)
+	if err != nil {
+		fmt.Println("create New Path err status:", err)
+	}
 	return path
 }
 

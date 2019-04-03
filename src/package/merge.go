@@ -8,9 +8,10 @@ import (
 	"log"
 	"model"
 	"strings"
+	"utils"
 )
 
-func RenamePackage(gchannel *model.GameChannel, tempPath string) {
+func RenamePackage(gchannel *model.GameChannel, tempPath string) string {
 	xmlPath := tempPath + "/AndroidManifest.xml"
 	content, err := ioutil.ReadFile(xmlPath)
 	newPageName := ""
@@ -18,10 +19,10 @@ func RenamePackage(gchannel *model.GameChannel, tempPath string) {
 		log.Fatal(err)
 	}
 
-	name := GetOldPackageName(tempPath)
-	fmt.Println("content :", name)
+	oldPackName := GetOldPackageName(tempPath)
+	fmt.Println("content :", oldPackName)
 	if gchannel.PackageName == "" || gchannel.Suffix == "" {
-		newPageName = name
+		newPageName = oldPackName
 		return
 	}
 	if gchannel.PackageName != "" || gchannel.Suffix == "" {
@@ -29,13 +30,31 @@ func RenamePackage(gchannel *model.GameChannel, tempPath string) {
 
 	}
 	if gchannel.PackageName == "" || gchannel.Suffix != "" {
-		newPageName = name + gchannel.Suffix
+		newPageName = oldPackName + gchannel.Suffix
 	}
 	if gchannel.PackageName != "" || gchannel.Suffix != "" {
 		newPageName = gchannel.PackageName + gchannel.Suffix
 	}
-	all := strings.ReplaceAll(string(content), name, newPageName)
+	all := strings.ReplaceAll(string(content), oldPackName, newPageName)
 	ioutil.WriteFile(xmlPath, []byte(all), 0777)
+
+	smaliPath := tempPath + "/smali"
+	oldPath := strings.ReplaceAll(oldPackName, ".", "/")
+	newPath := strings.ReplaceAll(newPageName, ".", "/")
+
+	if oldPath != newPath {
+		oldSmaliPath := smaliPath + "/" + oldPath
+		newSmaliPath := smaliPath + "/" + newPath
+		fmt.Println("oldSmaliPath", oldSmaliPath)
+
+		fmt.Println("newSmaliPath", newSmaliPath)
+		//创建新的包名的路径
+		utils.CreateNewFolder(newSmaliPath)
+		//在smali文件中，包路径全部的写法是com/example/demo
+		utils.CopySmali(oldPath, newPath, oldSmaliPath, newSmaliPath)
+
+	}
+	return newPageName
 }
 
 func GetOldPackageName(tempPath string) string {

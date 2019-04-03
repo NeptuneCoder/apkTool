@@ -55,9 +55,11 @@ func main() {
 		//复制原始的文件
 		fmt.Println("复制原始文件到新的目录:", tempPath)
 		fmt.Println(tempPath)
-		utils.CopyBakToTemp(atfile.GetCurrentDirectory()+"/"+"bak", tempPath)
+		utils.CopyBakToTemp(atfile.GetCurrentDirectory()+"/"+"bak", tempPath, func() string {
+			return "../../bak"
+		})
 		fmt.Println("修改包名")
-		pack.RenamePackage(itemChannel, tempPath)
+		newPackageVal := pack.RenamePackage(itemChannel, tempPath)
 
 	}
 
