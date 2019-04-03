@@ -66,6 +66,15 @@ func main() {
 			pack.ExecuteOperation(sdkPath, tempPath, sdkConfig.Config.Operations)
 		}
 
+		if itemChannel.Splash {
+			fmt.Println("添加闪屏图片")
+			pack.AddSplashImg(sdkPath, tempPath, itemChannel, game)
+		}
+
+		if itemChannel.IsIcon() {
+			pack.MergeIcon(sdkPath,tempPath,itemChannel)
+		}
+
 	}
 
 }

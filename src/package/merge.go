@@ -11,6 +11,30 @@ import (
 	"utils"
 )
 
+func MergeIcon(sdkPath, tempPath string, itemChannel *model.GameChannel) {
+
+}
+
+func AddSplashImg(sdkPath, tempPath string, channel *model.GameChannel, game *model.Game) {
+	splashName := channel.GetSplashImgName(game)
+	splashImgPath := sdkPath + "/" + "splash" + "/" + splashName + ".png"
+	fmt.Println("splashImgPath:", splashImgPath)
+	fmt.Println("tempPath:", tempPath)
+	boo, _ := utils.PathExists(splashImgPath)
+	if !boo {
+		fmt.Println("该渠道未配置闪屏图片")
+		return
+	}
+	drawablePath := tempPath + "/res/" + "drawable-hdpi"
+	boo, _ = utils.PathExists(splashImgPath)
+	if !boo {
+		utils.CreateNewFolder(drawablePath)
+	}
+	fmt.Println("splashImgPath  : ", splashImgPath)
+	fmt.Println("drawablePath  : ", drawablePath)
+	utils.CopyFile(splashImgPath, drawablePath+"/foyoentslpash.png")
+}
+
 func ExecuteOperation(sdkPath, tempPath string, operations []model.Operation) {
 	fmt.Println("sdkPath:", sdkPath)
 	for _, operation := range operations {
@@ -25,7 +49,9 @@ func ExecuteOperation(sdkPath, tempPath string, operations []model.Operation) {
 			utils.CreateNewFolder(toPath)
 			utils.CopyJar(fromPath, toPath)
 		} else {
-
+			fromPath := sdkPath + "/" + operation.From
+			toPath := tempPath + "/" + operation.To
+			utils.CopyJar(fromPath, toPath)
 		}
 	}
 }

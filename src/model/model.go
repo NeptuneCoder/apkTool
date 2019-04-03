@@ -3,7 +3,7 @@ package model
 import (
 	"fmt"
 	"strconv"
-	. "strings"
+	"strings"
 )
 
 type Environment struct {
@@ -124,7 +124,7 @@ func (channelArray *ChannelArray) GetChannel(channelId string) []*GameChannel {
 	if "all" == channelId {
 		return channelArray.Channels
 	} else {
-		splits := Split(channelId, ",")
+		splits := strings.Split(channelId, ",")
 		byIds := make([]*GameChannel, len(splits))
 		for i := 0; i < len(splits); i++ {
 			byId := channelArray.GetChannelById(splits[i])
@@ -149,15 +149,29 @@ func (channelArray *ChannelArray) PrintlnAll() {
 }
 
 type GameChannel struct {
-	PackageName string     `json:packageName`
-	Keystore    string     `json:keystore`
-	Suffix      string     `json:suffix` //包名后缀
-	Name        string     `json:name`
-	Icon        string     `json:icon`
-	Id          string     `json:id` //渠道号
-	Splash      bool     `json:splash`
-	Param       []Param    `json:param`
-	MetaData    []MetaData `json:metaData`
+	PackageName   string     `json:packageName`
+	Keystore      string     `json:keystore`
+	Suffix        string     `json:suffix` //包名后缀
+	Name          string     `json:name`
+	Icon          string     `json:icon`
+	Id            string     `json:id` //渠道号
+	Splash        bool       `json:splash`
+	SplashImgName string     `json:splashImgName`
+	Param         []Param    `json:param`
+	MetaData      []MetaData `json:metaData`
+}
+
+func (gameChannel *GameChannel) IsIcon() bool {
+	return gameChannel.Icon != ""
+}
+
+func (gameChannel *GameChannel) GetSplashImgName(game *Game) string {
+
+	if strings.ToLower(game.Orientation) == "" {
+		return "landscape"
+	} else {
+		return strings.ToLower(game.Orientation)
+	}
 }
 
 /**

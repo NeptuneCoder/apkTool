@@ -4,7 +4,7 @@
       "name": "飓风",
       "icon": "rb",
       "id": "foyoent",
-      "splash": "true",
+      "splash": true,
       "suffix": ".yehua",
       "packageName": "sg.dhxy.android.game",
       "param": [
