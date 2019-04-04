@@ -1,4 +1,4 @@
-package pack
+package merge
 
 import (
 	"bytes"
@@ -26,7 +26,7 @@ func TestRenamePackage(t *testing.T) {
 			fmt.Printf("Token len: %d\n", len(token.Attr))
 			for _, attr := range token.Attr {
 				attrName := attr.Name.Local
-				if "package" == attrName {
+				if "merge" == attrName {
 				}
 
 				fmt.Printf("An attribute is: %s %s\n", attrName, attr.Value)

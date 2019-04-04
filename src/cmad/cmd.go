@@ -16,3 +16,14 @@ func Exec(cmdStr string, args []string) {
 		return
 	}
 }
+func ExecDir(cmdStr string, args []string, dir func() string) {
+	cmd := exec.Command(cmdStr, args...)
+	cmd.Stdout = os.Stdout
+	cmd.Stderr = os.Stderr
+	cmd.Dir = dir()
+	err := cmd.Run()
+	if err != nil {
+		fmt.Println("cmad.Output: ", err)
+		return
+	}
+}

@@ -205,7 +205,7 @@ type KeyStoreConfig struct {
     "operations": [
       {
         "step": "1",
-        "type": "package",
+        "type": "merge",
         "from": "SDKManifest.xml",
         "to": "AndroidManifest.xml"
       },

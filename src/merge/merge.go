@@ -1,8 +1,7 @@
-package pack
+package merge
 
 import (
-	"bytes"
-	"encoding/xml"
+	"dom4g"
 	"fmt"
 	"io/ioutil"
 	"log"
@@ -11,6 +10,23 @@ import (
 	"utils"
 )
 
+func MergeMetaData(tempPath string, channel *model.GameChannel) {
+	xmlPath := tempPath + "/" + "AndroidManifest.xml"
+	buf, _ := ioutil.ReadFile(xmlPath)
+	fmt.Println("buf:", string(buf))
+	rootElement, _ := dom4g.LoadByXml(string(buf))
+	appNode := rootElement.Node("application")
+	for _, data := range channel.MetaData {
+		metaData := dom4g.NewElement("meta-data", "")
+		metaData.AddAttr("android:name", data.Name)
+		metaData.AddAttr("android:value", data.Value)
+		appNode.AddNode(metaData)
+	}
+	ioutil.WriteFile(xmlPath, []byte(rootElement.SyncToXml()), 0777)
+
+}
+
+//合并icon
 func MergeIcon(sdkPath, tempPath string, itemChannel *model.GameChannel) {
 
 }
@@ -35,7 +51,7 @@ func AddSplashImg(sdkPath, tempPath string, channel *model.GameChannel, game *mo
 	utils.CopyFile(splashImgPath, drawablePath+"/ic_launcher.png")
 }
 
-func ExecuteOperation(sdkPath, tempPath string, operations []model.Operation) {
+func MergeSource(sdkPath, tempPath string, operations []model.Operation) {
 	fmt.Println("sdkPath:", sdkPath)
 	for _, operation := range operations {
 		if "replaceManifest" == operation.Mold {
@@ -65,7 +81,6 @@ func RenamePackage(gchannel *model.GameChannel, tempPath string) string {
 	}
 
 	oldPackName := GetOldPackageName(tempPath)
-	fmt.Println("content :", oldPackName)
 	if gchannel.PackageName == "" || gchannel.Suffix == "" {
 		newPageName = oldPackName
 		return oldPackName
@@ -80,6 +95,8 @@ func RenamePackage(gchannel *model.GameChannel, tempPath string) string {
 	if gchannel.PackageName != "" || gchannel.Suffix != "" {
 		newPageName = gchannel.PackageName + gchannel.Suffix
 	}
+	fmt.Println("xmlPath:", xmlPath)
+	fmt.Println("Manifest.xml:", string(content))
 	all := strings.ReplaceAll(string(content), oldPackName, newPageName)
 	ioutil.WriteFile(xmlPath, []byte(all), 0777)
 
@@ -90,14 +107,10 @@ func RenamePackage(gchannel *model.GameChannel, tempPath string) string {
 	if oldPath != newPath {
 		oldSmaliPath := smaliPath + "/" + oldPath
 		newSmaliPath := smaliPath + "/" + newPath
-		fmt.Println("oldSmaliPath", oldSmaliPath)
-
-		fmt.Println("newSmaliPath", newSmaliPath)
 		//创建新的包名的路径
 		utils.CreateNewFolder(newSmaliPath)
 		//在smali文件中，包路径全部的写法是com/example/demo
 		utils.CopySmali(oldPath, newPath, oldSmaliPath, newSmaliPath)
-
 	}
 	return newPageName
 }
@@ -108,29 +121,7 @@ func GetOldPackageName(tempPath string) string {
 	if err != nil {
 		log.Fatal(err)
 	}
-	decoder := xml.NewDecoder(bytes.NewBuffer(content))
-	for t, err := decoder.Token(); err == nil; t, err = decoder.Token() {
-		switch token := t.(type) {
-		// 处理元素开始（标签）
-		case xml.StartElement:
-			for _, attr := range token.Attr {
-				attrName := attr.Name.Local
-				if "package" == attrName {
-					return attr.Value
-				}
-
-			}
-		// 处理元素结束（标签）
-		case xml.EndElement:
-			fmt.Printf("Token of '%s' end\n", token.Name.Local)
-		// 处理字符数据（这里就是元素的文本）
-		case xml.CharData:
-			content := string([]byte(token))
-			fmt.Printf("This is the content: %v\n", content)
-		default:
-			// ...
-		}
-
-	}
-	return ""
+	rootElement, _ := dom4g.LoadByXml(string(content))
+	s, _ := rootElement.AttrValue("package")
+	return s
 }

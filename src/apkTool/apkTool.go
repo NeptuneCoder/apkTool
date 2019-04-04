@@ -5,10 +5,11 @@ import (
 	"fmt"
 	"github.com/yanghai23/GoLib/atfile"
 	"jar2smali"
+	"merge"
 	"model"
-	"package"
 	"parse"
 	"rjar"
+	"time"
 	"utils"
 )
 
@@ -35,6 +36,7 @@ func main() {
 		return
 	}
 	workPath := utils.CreateNewFolder(atfile.GetCurrentDirectory() + "/" + "work")
+	fmt.Println("workPath:", workPath)
 	//instanllFramework-res.apk
 	installFrameworkRes(env)
 	//获取母包的路径
@@ -62,25 +64,33 @@ func main() {
 			return "../../bak"
 		})
 		fmt.Println("修改包名")
-		newPackageVal := pack.RenamePackage(itemChannel, tempPath)
+		newPackageVal := merge.RenamePackage(itemChannel, tempPath)
 		fmt.Println("NewPageName:", newPackageVal)
 		fmt.Println("合并资源")
+		// 将配置的jar，res，等资源进行合并
 		if len(sdkConfig.Config.Operations) != 0 {
-			pack.ExecuteOperation(sdkPath, tempPath, sdkConfig.Config.Operations)
+			merge.MergeSource(sdkPath, tempPath, sdkConfig.Config.Operations)
 		}
 
+		//是否添加闪屏页面
 		if itemChannel.Splash {
 			fmt.Println("添加闪屏图片")
-			pack.AddSplashImg(sdkPath, tempPath, itemChannel, game)
+			merge.AddSplashImg(sdkPath, tempPath, itemChannel, game)
 		}
 
+		//处理Icon图标
 		if itemChannel.IsIcon() {
-			pack.MergeIcon(sdkPath, tempPath, itemChannel)
+			merge.MergeIcon(sdkPath, tempPath, itemChannel)
 		}
 		fmt.Println("生成R文件")
 		rjar.ComplieR(apkToolsPath, tempPath, workPath, newPackageVal, &sdkConfig.Config)
-		libDir := tempPath + "/lib"
-		jar2smali.Jar2Smali(apkToolsPath, tempPath, libDir)
+		fmt.Println("jar2smali")
+		t6 := time.Now().Unix() //秒
+		jar2smali.Jar2Smali(apkToolsPath, tempPath)
+		fmt.Println("花费的时间:", time.Now().Unix() - t6, "s")
+
+		fmt.Println("合并meta-data")
+		merge.MergeMetaData(tempPath, itemChannel)
 	}
 
 }
