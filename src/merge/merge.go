@@ -10,6 +10,9 @@ import (
 	"utils"
 )
 
+func MergeAndroidManifest(sdkPath ,tempPath string) {
+
+}
 func AddSplashActivity(tempPath string, itemChannel *model.GameChannel) () {
 	if itemChannel.Splash {
 

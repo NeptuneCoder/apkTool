@@ -100,7 +100,7 @@ func (games *Games) GetGameConfig(gameId string) (*Game) {
           },
           {
             "name": "APP_CONFIG",
-            "value": "data/www/config"
+            "value": "data/www/customConfig"
           }
         ]
       }
@@ -201,7 +201,7 @@ type KeyStoreConfig struct {
 
 /**
 {
-  "config": {
+  "customConfig": {
     "operations": [
       {
         "step": "1",
@@ -236,7 +236,7 @@ type KeyStoreConfig struct {
 }
  */
 type SdkRootConfig struct {
-	Config SdkConfig `json:config`
+	Config SdkConfig `json:customConfig`
 }
 
 type SdkConfig struct {

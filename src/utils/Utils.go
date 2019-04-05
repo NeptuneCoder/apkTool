@@ -9,6 +9,7 @@ import (
 	"os"
 	"parse"
 	"path/filepath"
+	"replace"
 	"rjar"
 	"strings"
 )
@@ -31,10 +32,10 @@ func GetGameApkPath(path string) (resPath string, boo bool) {
 }
 
 func ExplainChannels(apkToolsPath, workPath string, game *model.Game, channels []*model.GameChannel) {
-	for _, itemChannel := range channels {
-		fmt.Println("开始打包，渠道【" + itemChannel.Id + "】")
+	for _, gameChannel := range channels {
+		fmt.Println("开始打包，渠道【" + gameChannel.Id + "】")
 		//读取sdk的配置信息
-		sdkPath := atfile.GetCurrentDirectory() + "/config/sdk/" + itemChannel.Id
+		sdkPath := atfile.GetCurrentDirectory() + "/customConfig/sdk/" + gameChannel.Id
 		sdkConfig, _ := parse.ReadSdkConfig(sdkPath)
 		fmt.Println(sdkConfig)
 
@@ -47,7 +48,7 @@ func ExplainChannels(apkToolsPath, workPath string, game *model.Game, channels [
 			return "../../bak"
 		})
 		fmt.Println("修改包名")
-		newPackageVal := merge.RenamePackage(itemChannel, tempPath)
+		newPackageVal := merge.RenamePackage(gameChannel, tempPath)
 		fmt.Println("NewPageName:", newPackageVal)
 		fmt.Println("合并资源")
 		// 将配置的jar，res，等资源进行合并
@@ -56,18 +57,23 @@ func ExplainChannels(apkToolsPath, workPath string, game *model.Game, channels [
 		//是否添加闪屏页面
 
 		fmt.Println("添加闪屏图片")
-		merge.AddSplashImg(sdkPath, tempPath, itemChannel, game)
+		merge.AddSplashImg(sdkPath, tempPath, gameChannel, game)
 
 		//处理Icon图标
 
-		merge.MergeIcon(sdkPath, tempPath, itemChannel)
+		merge.MergeIcon(sdkPath, tempPath, gameChannel)
 		fmt.Println("生成R文件")
 		rjar.ComplieR(apkToolsPath, tempPath, workPath, newPackageVal, &sdkConfig.Config)
 		fmt.Println("jar2smali")
 		jar2smali.Jar2Smali(apkToolsPath, tempPath)
 		fmt.Println("合并meta-data")
-		merge.MergeMetaData(tempPath, itemChannel)
+		merge.MergeMetaData(tempPath, gameChannel)
 
-		merge.AddSplashActivity(tempPath, itemChannel)
+		merge.AddSplashActivity(tempPath, gameChannel)
+		merge.MergeAndroidManifest(sdkPath, tempPath)
+		replace.ReplacePkgOfManifest(tempPath, newPackageVal)
+		CreateOutDir()
+
+
 	}
 }

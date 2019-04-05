@@ -58,7 +58,7 @@ func ReadGameChannel(gamePath string) (*model.ChannelArray, error) {
  */
 func ReadSdkConfig(sdkPathName string) (*model.SdkRootConfig, error) {
 
-	data, err := atfile.ReadConfig(sdkPathName, "config.json")
+	data, err := atfile.ReadConfig(sdkPathName, "customConfig.json")
 	if err != nil {
 		fmt.Println(err)
 		return nil, err

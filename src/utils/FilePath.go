@@ -8,6 +8,9 @@ import (
 	"strings"
 )
 
+func CreateOutDir() {
+	os.MkdirAll("./", 0777)
+}
 func CopyJar(fromPath, toPath string) {
 	_ = filepath.Walk(fromPath, func(path string, info os.FileInfo, err error) error {
 		//检测目录正确性
