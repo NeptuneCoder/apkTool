@@ -10,6 +10,11 @@ import (
 	"utils"
 )
 
+func AddSplashActivity(tempPath string, itemChannel *model.GameChannel) () {
+	if itemChannel.Splash {
+
+	}
+}
 func MergeMetaData(tempPath string, channel *model.GameChannel) {
 	xmlPath := tempPath + "/" + "AndroidManifest.xml"
 	buf, _ := ioutil.ReadFile(xmlPath)
@@ -28,10 +33,15 @@ func MergeMetaData(tempPath string, channel *model.GameChannel) {
 
 //合并icon
 func MergeIcon(sdkPath, tempPath string, itemChannel *model.GameChannel) {
+	if itemChannel.IsIcon() {
 
+	}
 }
 
 func AddSplashImg(sdkPath, tempPath string, channel *model.GameChannel, game *model.Game) {
+	if !channel.Splash {
+		return
+	}
 	splashName := channel.GetSplashImgName(game)
 	splashImgPath := sdkPath + "/" + "splash" + "/" + splashName + ".png"
 	fmt.Println("splashImgPath:", splashImgPath)
@@ -52,7 +62,6 @@ func AddSplashImg(sdkPath, tempPath string, channel *model.GameChannel, game *mo
 }
 
 func MergeSource(sdkPath, tempPath string, operations []model.Operation) {
-	fmt.Println("sdkPath:", sdkPath)
 	for _, operation := range operations {
 		if "replaceManifest" == operation.Mold {
 			manifestPath := tempPath + "/" + "AndroidManifest.xml"

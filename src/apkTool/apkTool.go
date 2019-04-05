@@ -4,12 +4,8 @@ import (
 	"cmad"
 	"fmt"
 	"github.com/yanghai23/GoLib/atfile"
-	"jar2smali"
-	"merge"
 	"model"
 	"parse"
-	"rjar"
-	"time"
 	"utils"
 )
 
@@ -47,52 +43,7 @@ func main() {
 	}
 	fmt.Println("解压apk包")
 	unZipApk(game, gameApkPath)
-
-	for _, itemChannel := range channel {
-		fmt.Println("开始打包，渠道【" + itemChannel.Id + "】")
-		//读取sdk的配置信息
-		sdkPath := atfile.GetCurrentDirectory() + "/config/sdk/" + itemChannel.Id
-		sdkConfig, _ := parse.ReadSdkConfig(sdkPath)
-		fmt.Println(sdkConfig)
-
-		fmt.Println("清空temp目录")
-		tempPath := utils.CreateNewFolder(atfile.GetCurrentDirectory() + "/work/temp")
-		//复制原始的文件
-		fmt.Println("复制原始文件到新的目录:", tempPath)
-		fmt.Println(tempPath)
-		utils.CopyBakToTemp(atfile.GetCurrentDirectory()+"/bak", tempPath, func() string {
-			return "../../bak"
-		})
-		fmt.Println("修改包名")
-		newPackageVal := merge.RenamePackage(itemChannel, tempPath)
-		fmt.Println("NewPageName:", newPackageVal)
-		fmt.Println("合并资源")
-		// 将配置的jar，res，等资源进行合并
-		if len(sdkConfig.Config.Operations) != 0 {
-			merge.MergeSource(sdkPath, tempPath, sdkConfig.Config.Operations)
-		}
-
-		//是否添加闪屏页面
-		if itemChannel.Splash {
-			fmt.Println("添加闪屏图片")
-			merge.AddSplashImg(sdkPath, tempPath, itemChannel, game)
-		}
-
-		//处理Icon图标
-		if itemChannel.IsIcon() {
-			merge.MergeIcon(sdkPath, tempPath, itemChannel)
-		}
-		fmt.Println("生成R文件")
-		rjar.ComplieR(apkToolsPath, tempPath, workPath, newPackageVal, &sdkConfig.Config)
-		fmt.Println("jar2smali")
-		t6 := time.Now().Unix() //秒
-		jar2smali.Jar2Smali(apkToolsPath, tempPath)
-		fmt.Println("花费的时间:", time.Now().Unix() - t6, "s")
-
-		fmt.Println("合并meta-data")
-		merge.MergeMetaData(tempPath, itemChannel)
-	}
-
+	utils.ExplainChannels(apkToolsPath, workPath, game, channel)
 }
 
 func unZipApk(game *model.Game, apkPath string) {
