@@ -84,7 +84,7 @@ func MergeSource(sdkPath, tempPath string, operations []model.Operation) {
 	}
 }
 
-func RenamePackage(gchannel *model.GameChannel, tempPath string) string {
+func RenamePackage(gamechannel *model.GameChannel, tempPath string) string {
 	xmlPath := tempPath + "/AndroidManifest.xml"
 	content, err := ioutil.ReadFile(xmlPath)
 	newPageName := ""
@@ -93,19 +93,19 @@ func RenamePackage(gchannel *model.GameChannel, tempPath string) string {
 	}
 
 	oldPackName := GetOldPackageName(tempPath)
-	if gchannel.PackageName == "" || gchannel.Suffix == "" {
+	if gamechannel.PackageName == "" || gamechannel.Suffix == "" {
 		newPageName = oldPackName
 		return oldPackName
 	}
-	if gchannel.PackageName != "" || gchannel.Suffix == "" {
-		newPageName = gchannel.PackageName
+	if gamechannel.PackageName != "" || gamechannel.Suffix == "" {
+		newPageName = gamechannel.PackageName
 
 	}
-	if gchannel.PackageName == "" || gchannel.Suffix != "" {
-		newPageName = oldPackName + gchannel.Suffix
+	if gamechannel.PackageName == "" || gamechannel.Suffix != "" {
+		newPageName = oldPackName + gamechannel.Suffix
 	}
-	if gchannel.PackageName != "" || gchannel.Suffix != "" {
-		newPageName = gchannel.PackageName + gchannel.Suffix
+	if gamechannel.PackageName != "" || gamechannel.Suffix != "" {
+		newPageName = gamechannel.PackageName + gamechannel.Suffix
 	}
 	fmt.Println("xmlPath:", xmlPath)
 	fmt.Println("Manifest.xml:", string(content))

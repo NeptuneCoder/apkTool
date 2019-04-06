@@ -238,7 +238,7 @@ type KeyStoreConfig struct {
 }
  */
 type SdkRootConfig struct {
-	Config SdkConfig `json:customConfig`
+	Config SdkConfig `json:config`
 }
 
 type SdkConfig struct {
