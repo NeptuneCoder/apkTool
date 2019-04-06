@@ -2,6 +2,7 @@ package main
 
 import (
 	"cmad"
+	"env"
 	"fmt"
 	"github.com/yanghai23/GoLib/atfile"
 	"model"
@@ -9,8 +10,11 @@ import (
 	"utils"
 )
 
+func init() {
+	env.ReadEnvConfig()
+}
 func main() {
-	env, _ := parse.ReadEnvConfig()
+
 	gamesConfig, _ := parse.ReadGamesConfig()
 	gamesConfig.PrintlnAll()
 	gameId := keybordIn("请选择一个游戏(输入gameId)：")
@@ -34,7 +38,7 @@ func main() {
 	workPath := utils.CreateNewFolder(atfile.GetCurrentDirectory() + "/" + "work")
 	fmt.Println("workPath:", workPath)
 	//instanllFramework-res.apk
-	installFrameworkRes(env)
+	installFrameworkRes(env.Env)
 	//获取母包的路径
 	gameApkPath, boo := utils.GetGameApkPath(game.Folder)
 	if !boo {

@@ -2,24 +2,26 @@ package rjar
 
 import (
 	"cmad"
+	"env"
 	"fmt"
 	"io/ioutil"
 	"model"
 	"os"
 	"os/exec"
-	"parse"
 	"strings"
 	"utils"
 )
 
-func GetAaptMac() string {
-	env, _ := parse.ReadEnvConfig()
-	return env.AaptVersion
+func GetAapt() string {
+	return env.Env.AaptVersion
+}
+func GetAndroidJarName() string {
+	return env.Env.AndroidJarName
 }
 func ComplieR(apkToolsPath, tempPath, workPath, newPackageVal string, sdkConfig *model.SdkConfig) {
-	aaptPath := apkToolsPath + GetAaptMac()
+	aaptPath := apkToolsPath + GetAapt()
 	resPath := tempPath + "/res"
-	androidJarPath := apkToolsPath + "android.jar"
+	androidJarPath := apkToolsPath + GetAndroidJarName()
 	manifestPath := tempPath + "/AndroidManifest.xml"
 	rClazzPath := workPath + "/r"
 	utils.CreateNewFolder(rClazzPath)

@@ -7,9 +7,10 @@ import (
 )
 
 type Environment struct {
-	ApkToolPath  string `json:apkToolPath`
-	FrameworkRes string `json:frameworkRes`
-	AaptVersion  string `json:aaptVersion`
+	ApkToolPath    string `json:apkToolPath`
+	FrameworkRes   string `json:frameworkRes`
+	AaptVersion    string `json:aaptVersion`
+	AndroidJarName string `json:androidJarName`
 }
 
 /**
