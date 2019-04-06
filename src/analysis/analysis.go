@@ -1,5 +1,7 @@
 package analysis
 
+// 根据读取的配置信息，可以处理打包流程
+
 import (
 	"fmt"
 	"github.com/yanghai23/GoLib/atfile"

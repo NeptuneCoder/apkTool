@@ -7,11 +7,11 @@ import (
 	"model"
 )
 
-
 /**
 	加载所有游戏列表
  */
 func ReadGamesConfig() (*model.Games, error) {
+	//TODO 改为通过数据库读取
 	s := atfile.GetCurrentDirectory() + "/games/"
 	data, err := atfile.ReadConfig(s, "games.json")
 	if err != nil {
@@ -27,8 +27,8 @@ func ReadGamesConfig() (*model.Games, error) {
 	加载选中的游戏的渠道列表
  */
 func ReadGameChannel(gamePath string) (*model.ChannelArray, error) {
+	//TODO 改为通过数据库读取
 	s := atfile.GetCurrentDirectory() + "/games/" + gamePath
-
 	data, err := atfile.ReadConfig(s, "channel.json")
 	if err != nil {
 		fmt.Println(err)
@@ -43,7 +43,7 @@ func ReadGameChannel(gamePath string) (*model.ChannelArray, error) {
 	加载选中的游戏的渠道列表
  */
 func ReadSdkConfig(sdkPathName string) (*model.SdkRootConfig, error) {
-
+	//TODO 改为通过数据库读取
 	data, err := atfile.ReadConfig(sdkPathName, "config.json")
 	if err != nil {
 		fmt.Println(err)
