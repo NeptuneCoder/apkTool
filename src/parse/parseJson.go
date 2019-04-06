@@ -8,10 +8,8 @@ import (
 )
 
 func ReadEnvConfig() (*model.Environment, error) {
-
 	s := atfile.GetCurrentDirectory() + "/"
 	fmt.Println(s)
-
 	data, err := atfile.ReadConfig(s, "Environment.json")
 	if err != nil {
 		fmt.Println(err)

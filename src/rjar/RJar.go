@@ -7,12 +7,17 @@ import (
 	"model"
 	"os"
 	"os/exec"
+	"parse"
 	"strings"
 	"utils"
 )
 
+func GetAaptMac() string {
+	env, _ := parse.ReadEnvConfig()
+	return env.AaptVersion
+}
 func ComplieR(apkToolsPath, tempPath, workPath, newPackageVal string, sdkConfig *model.SdkConfig) {
-	aaptPath := apkToolsPath + "aaptMac"
+	aaptPath := apkToolsPath + GetAaptMac()
 	resPath := tempPath + "/res"
 	androidJarPath := apkToolsPath + "android.jar"
 	manifestPath := tempPath + "/AndroidManifest.xml"
