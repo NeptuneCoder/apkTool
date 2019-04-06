@@ -2,6 +2,7 @@
 该工程用于处理apk资源合并
 
 #### 项目结构说明
+```
 .
 ├── analysis  //处理包的流程
 │   └── analysis.go 
@@ -36,3 +37,4 @@
 └── utils       //工具类
     ├── FilePath.go
     └── Utils.go
+```
