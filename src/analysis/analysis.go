@@ -3,6 +3,7 @@ package analysis
 // 根据读取的配置信息，可以处理打包流程
 
 import (
+	"customConfig"
 	"fmt"
 	"github.com/yanghai23/GoLib/atfile"
 	"jar2smali"
@@ -42,9 +43,8 @@ func ExplainChannels(apkToolsPath, workPath string, game *model.Game, channels [
 		//是否添加闪屏页面
 		fmt.Println("添加闪屏图片")
 		merge.AddSplashImg(sdkPath, tempPath, gameChannel, game)
-
+		customConfig.CreateCustomConfig(tempPath, gameChannel, &sdkConfig.Config)
 		//处理Icon图标
-
 		merge.MergeIcon(sdkPath, tempPath, gameChannel)
 		fmt.Println("生成R文件")
 		rjar.ComplieR(apkToolsPath, tempPath, workPath, newPackageVal, &sdkConfig.Config)
@@ -55,7 +55,7 @@ func ExplainChannels(apkToolsPath, workPath string, game *model.Game, channels [
 
 		merge.AddSplashActivity(tempPath, gameChannel)
 		merge.MergeAndroidManifest(sdkPath, tempPath)
-		replace.ReplacePkgOfManifest(tempPath, newPackageVal)
+		replace.ReplacePkgManifest(tempPath, newPackageVal)
 		utils.CreateOutDir()
 	}
 }

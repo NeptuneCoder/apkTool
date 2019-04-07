@@ -1,5 +1,5 @@
 package replace
 
-func ReplacePkgOfManifest(tempPath, newPkgName string) {
+func ReplacePkgManifest(tempPath, newPkgName string) {
 
 }

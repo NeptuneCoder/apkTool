@@ -5,12 +5,13 @@ import (
 	"fmt"
 	"github.com/yanghai23/GoLib/atfile"
 	"model"
+	"utils"
 )
 
 var Env *model.Environment
 
 func ReadEnvConfig() error {
-	s := atfile.GetCurrentDirectory() + "/"
+	s := utils.GetDirRel()
 	fmt.Println(s)
 	data, err := atfile.ReadConfig(s, "Environment.json")
 	if err != nil {

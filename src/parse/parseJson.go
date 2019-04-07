@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"github.com/yanghai23/GoLib/atfile"
 	"model"
+	"utils"
 )
 
 /**
@@ -12,7 +13,7 @@ import (
  */
 func ReadGamesConfig() (*model.Games, error) {
 	//TODO 改为通过数据库读取
-	s := atfile.GetCurrentDirectory() + "/games/"
+	s := utils.GetDirRel() + "games/"
 	data, err := atfile.ReadConfig(s, "games.json")
 	if err != nil {
 		fmt.Println(err)
@@ -28,7 +29,7 @@ func ReadGamesConfig() (*model.Games, error) {
  */
 func ReadGameChannel(gamePath string) (*model.ChannelArray, error) {
 	//TODO 改为通过数据库读取
-	s := atfile.GetCurrentDirectory() + "/games/" + gamePath
+	s := utils.GetDirRel() + "games/" + gamePath
 	data, err := atfile.ReadConfig(s, "channel.json")
 	if err != nil {
 		fmt.Println(err)

@@ -17,7 +17,7 @@ func init() {
 }
 func main() {
 
-	apkToolsPath := atfile.GetCurrentDirectory() + "/apktools/"
+	apkToolsPath := utils.GetDirRel() + "apktools/"
 	fmt.Println("apkToolsPath:", apkToolsPath)
 	//选中渠道名
 	channelId := utils.KeyBordIn("请选择渠道(多个用逗号隔开，all为所有)：")
@@ -26,7 +26,7 @@ func main() {
 		fmt.Println("没有找到您输入的渠道")
 		return
 	}
-	workPath := utils.CreateNewFolder(atfile.GetCurrentDirectory() + "/" + "work")
+	workPath := utils.CreateNewFolder(utils.GetDirRel() + "work")
 	fmt.Println("workPath:", workPath)
 	//instanllFramework-res.apk
 	installFrameworkRes(env.Env)

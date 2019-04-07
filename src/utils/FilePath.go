@@ -9,7 +9,7 @@ import (
 )
 
 func CreateOutDir() {
-	os.MkdirAll("./", 0777)
+	os.MkdirAll(GetDirRel()+"out", 0777)
 }
 func CopyJar(fromPath, toPath string) {
 	_ = filepath.Walk(fromPath, func(path string, info os.FileInfo, err error) error {
