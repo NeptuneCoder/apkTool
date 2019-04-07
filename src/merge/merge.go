@@ -10,7 +10,7 @@ import (
 	"utils"
 )
 
-func MergeAndroidManifest(sdkPath ,tempPath string) {
+func MergeAndroidManifest(sdkPath, tempPath string) {
 
 }
 func AddSplashActivity(tempPath string, itemChannel *model.GameChannel) () {
@@ -31,7 +31,6 @@ func MergeMetaData(tempPath string, channel *model.GameChannel) {
 		appNode.AddNode(metaData)
 	}
 	ioutil.WriteFile(xmlPath, []byte(rootElement.SyncToXml()), 0777)
-
 }
 
 //合并icon
@@ -84,7 +83,7 @@ func MergeSource(sdkPath, tempPath string, operations []model.Operation) {
 	}
 }
 
-func RenamePackage(gamechannel *model.GameChannel, tempPath string) string {
+func RenamePackage(gameChannel *model.GameChannel, tempPath string) string {
 	xmlPath := tempPath + "/AndroidManifest.xml"
 	content, err := ioutil.ReadFile(xmlPath)
 	newPageName := ""
@@ -93,19 +92,19 @@ func RenamePackage(gamechannel *model.GameChannel, tempPath string) string {
 	}
 
 	oldPackName := GetOldPackageName(tempPath)
-	if gamechannel.PackageName == "" || gamechannel.Suffix == "" {
+	if gameChannel.PackageName == "" || gameChannel.Suffix == "" {
 		newPageName = oldPackName
 		return oldPackName
 	}
-	if gamechannel.PackageName != "" || gamechannel.Suffix == "" {
-		newPageName = gamechannel.PackageName
+	if gameChannel.PackageName != "" || gameChannel.Suffix == "" {
+		newPageName = gameChannel.PackageName
 
 	}
-	if gamechannel.PackageName == "" || gamechannel.Suffix != "" {
-		newPageName = oldPackName + gamechannel.Suffix
+	if gameChannel.PackageName == "" || gameChannel.Suffix != "" {
+		newPageName = oldPackName + gameChannel.Suffix
 	}
-	if gamechannel.PackageName != "" || gamechannel.Suffix != "" {
-		newPageName = gamechannel.PackageName + gamechannel.Suffix
+	if gameChannel.PackageName != "" || gameChannel.Suffix != "" {
+		newPageName = gameChannel.PackageName + gameChannel.Suffix
 	}
 	fmt.Println("xmlPath:", xmlPath)
 	fmt.Println("Manifest.xml:", string(content))

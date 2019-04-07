@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" 
+    android:background="@drawable/ct108_fenghuangnet_backgroud">
+    <RelativeLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <View
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/ct108_fenghuangnet_backgroud_top"/>
+        <TextView 
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:text="其他功能"
+            android:textColor="#ffffff"/>
+        <ImageView 
+            android:id="@+id/close_button"
+            android:src="@drawable/ct108_fenghuang_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            
+            android:scaleType="centerCrop"
+            android:layout_alignParentRight="true"
+            />
+    </RelativeLayout>
+    
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        >
+        <TextView 
+        android:id="@+id/bing_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:gravity="center"
+        android:text="绑定账号"
+        android:background="@drawable/ct108_fenghuangnet_backgroud_selector"
+        android:layout_margin="10dp"
+        android:textColor="@drawable/ct108_fenghuangnet_textcolor_selector"/>
+    <TextView 
+        android:id="@+id/chaxun_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="查询充值记录"
+        android:gravity="center"
+        android:background="@drawable/ct108_fenghuangnet_backgroud_selector"
+        android:layout_margin="10dp"
+        android:textColor="@drawable/ct108_fenghuangnet_textcolor_selector"/>
+    
+    </LinearLayout>
+
+</LinearLayout>

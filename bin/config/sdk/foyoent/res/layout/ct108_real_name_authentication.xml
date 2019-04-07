@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    android:padding="0dp">
+
+    <!--<ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">-->
+
+    <LinearLayout
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/ct108_login_background"
+        android:orientation="vertical"
+        android:paddingBottom="15dp"
+        android:paddingLeft="0dp"
+        android:paddingRight="0dp"
+        android:paddingTop="3dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:gravity="center"
+            android:paddingRight="5dp">
+
+            <ImageButton
+                android:id="@+id/back"
+                android:layout_width="@dimen/back_width"
+                android:layout_height="@dimen/back_height"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/back_left_pading"
+                android:background="@drawable/ct108_back"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/titleTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:text="@string/ct108_real_name_authentication"
+                android:textColor="@color/ct108_title_charactor_color"
+                android:textSize="18dp" />
+
+            <ImageButton
+                android:id="@+id/shutdown_button"
+                android:layout_width="@dimen/shut_down_width"
+                android:layout_height="@dimen/shut_down_height"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/ct108_sdk_shutdown_select" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp">
+
+            <TextView
+                android:id="@+id/hintTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/ct108_real_name_authentication_prompt"
+                android:textColor="@color/ct108_dark_gray"
+                android:textSize="14dp" />
+
+
+            <LinearLayout
+                android:id="@+id/text_user"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:gravity="center_vertical"
+                        android:text="@string/ct108_real_name"
+                        android:textColor="@color/ct108_text_color"
+                        android:textSize="16dp" />
+
+                    <LinearLayout
+                        android:id="@+id/clearLayout"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <ImageButton
+                            android:id="@+id/username_clear"
+                            android:layout_width="@dimen/clear_width"
+                            android:layout_height="@dimen/clear_height"
+                            android:background="@drawable/ct108_x_select"
+                            android:visibility="gone" />
+                    </LinearLayout>
+
+                    <EditText
+                        android:id="@+id/user"
+                        android:layout_width="180dp"
+                        android:layout_height="40dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="60dp"
+                        android:layout_toLeftOf="@+id/clearLayout"
+                        android:background="@drawable/ct108_null"
+                        android:gravity="center_vertical"
+                        android:hint="@string/ct108_default_name"
+                        android:imeOptions="flagNoExtractUi"
+                        android:inputType="text"
+                        android:maxEms="15"
+                        android:maxLength="15"
+                        android:minWidth="230dp"
+                        android:paddingLeft="5dp"
+                        android:textColor="@color/ct108_text_color"
+                        android:textColorHint="@color/ct108_text_hint_color"
+                        android:textSize="15dp" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ct108_background_line" />
+
+            <LinearLayout
+                android:id="@+id/cardID_layout"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_below="@id/text_user"
+                android:layout_marginTop="5dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:gravity="center_vertical"
+                        android:text="@string/ct108_ID_card"
+                        android:textColor="@color/ct108_text_color"
+                        android:textSize="16dp" />
+
+                    <LinearLayout
+                        android:id="@+id/cardIdClearLayout"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <ImageButton
+                            android:id="@+id/cardId_clear"
+                            android:layout_width="@dimen/clear_width"
+                            android:layout_height="@dimen/clear_height"
+                            android:background="@drawable/ct108_x_select"
+                            android:visibility="gone" />
+                    </LinearLayout>
+
+                    <EditText
+                        android:id="@+id/cardId"
+                        android:layout_width="180dp"
+                        android:layout_height="40dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="60dp"
+                        android:layout_toLeftOf="@+id/cardIdClearLayout"
+                        android:background="@drawable/ct108_null"
+                        android:gravity="center_vertical"
+                        android:hint="@string/ct108_default_card_id"
+                        android:imeOptions="flagNoExtractUi"
+                        android:maxLength="18"
+                        android:minWidth="230dp"
+                        android:paddingLeft="5dp"
+                        android:textColor="@color/ct108_text_color"
+                        android:textColorHint="@color/ct108_text_hint_color"
+                        android:textSize="15dp" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ct108_background_line" />
+
+            <TextView
+                android:id="@+id/errorName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/ct108_errorRegisterName"
+                android:textColor="@color/ct108_error_hint"
+                android:textSize="15dp"
+                android:visibility="invisible" />
+
+            <Button
+                android:id="@+id/save"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/ct108_button_select"
+                android:padding="0dp"
+                android:text="@string/ct108_commit"
+                android:textColor="@color/ct108_white"
+                android:textSize="18dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+    <!--</ScrollView>-->
+</FrameLayout>

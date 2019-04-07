@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rootview"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ct108_shape_corners_bg_white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/toolbar_rl"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbar_height"
+        android:background="@drawable/ct108_shape_corners_bg_top">
+
+        <ImageButton
+            android:id="@+id/ibtn_back"
+            style="@style/ct108_tcy_ibtn_toolbar_back"
+            android:onClick="onViewClick" />
+        <TextView
+            android:layout_toRightOf="@+id/ibtn_back"
+            android:id="@+id/textview_pagetitle"
+            style="@style/ct108_tcy_header_title"
+            android:text="页面名称"
+            />
+        <ImageView
+            android:id="@+id/imagebutton_close"
+            android:layout_marginRight="12dp"
+            android:layout_marginLeft="12dp"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:onClick="onViewClick"
+            android:src="@drawable/ct108_icon_close" />
+    </RelativeLayout>
+
+    <WebView
+        android:id="@+id/wv_base"
+        android:layout_marginBottom="@dimen/ct108_tcy_corner_size"
+        android:layout_below="@+id/toolbar_rl"
+        android:background="@drawable/ct108_shape_corners_bg_white"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </WebView>
+    <!--<ProgressBar-->
+        <!--android:id="@+id/progressbar"-->
+        <!--android:layout_below="@+id/toolbar_rl"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content" />-->
+
+</RelativeLayout>

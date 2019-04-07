@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingBottom="20dp"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="15dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+            
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:gravity="center_vertical"
+                android:text="@string/ct108_user"
+                android:textColor="@color/ct108_text_color"
+                android:textSize="16dp" />
+
+            <EditText
+                android:id="@+id/user"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="60dp"
+                android:background="@drawable/ct108_null"
+                android:hint="@string/ct108_hint_user_register"
+                android:imeOptions="flagNoExtractUi"
+                android:inputType="text"
+                android:maxLength="16"
+                android:paddingLeft="5dp"
+                android:textColor="@color/ct108_text_color"
+                android:textColorHint="@color/ct108_text_hint_color"
+                android:textSize="15dp" />
+
+            <LinearLayout
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:orientation="horizontal" >
+
+                <ImageButton
+                    android:id="@+id/register_username_clear"
+                    android:layout_width="@dimen/clear_width"
+                    android:layout_height="@dimen/clear_height"
+                    android:background="@drawable/ct108_x_select"
+                    android:visibility="visible" />
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+    
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ct108_background_line" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+            
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:gravity="center_vertical"	
+                android:text="@string/ct108_password"
+                android:textColor="@color/ct108_text_color"
+                android:textSize="16dp" />
+
+            <EditText
+                android:id="@+id/password"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="60dp"
+                android:background="@drawable/ct108_null"
+                android:hint="@string/ct108_hint_password_register"
+                android:inputType="textPassword"
+                android:imeOptions="flagNoExtractUi"
+                android:maxLength="16"
+                android:paddingLeft="5dp"
+                android:textColor="@color/ct108_text_color"
+                android:textColorHint="@color/ct108_text_hint_color"
+                android:textSize="15dp" />
+
+            <LinearLayout
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:orientation="horizontal" >
+
+                <ImageView
+                    android:id="@+id/show_password"	
+                    android:layout_width="@dimen/show_password_width"
+                    android:layout_height="@dimen/show_password_height"
+                    android:background="@drawable/ct108_password_hide" />
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+    
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ct108_background_line" />
+
+    <TextView
+        android:id="@+id/errorRegisterText"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_gravity="left"
+        android:layout_marginTop="5dp"
+        android:text=""
+        android:textColor="@color/ct108_error_hint"
+        android:textSize="15dp" />
+
+    <Button
+        android:id="@+id/register"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:padding="0dp"
+        android:background="@drawable/ct108_button_select"
+        android:gravity="center"
+        android:text="@string/ct108_register"
+        android:textColor="@color/ct108_white"
+        android:textSize="18dp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:paddingTop="25dp" >
+
+        <CheckBox
+            android:id="@+id/register_checkbox"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center"
+            android:button="@drawable/ct108_checkbox_select"
+            android:checked="true" />
+
+        <TextView
+            android:id="@+id/readedtext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/ct108_register_protocol"
+            android:textColor="@color/ct108_light_gray"
+            android:textSize="14dp" />
+
+        <TextView
+            android:id="@+id/user_protocol"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/ct108_user_protocol"
+            android:textColor="@color/ct108_font_color_black"
+            android:textSize="14dp" />
+    </LinearLayout>
+
+</LinearLayout>

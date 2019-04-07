@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/payitem_root"
+    android:layout_width="@dimen/ct108_tcy_button_pay_item_width"
+    android:layout_height="@dimen/ct108_tcy_button_pay_item_height"
+    android:fitsSystemWindows="true"
+    android:descendantFocusability="beforeDescendants">
+
+    <RelativeLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <EditText
+            android:id="@+id/edit_num"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/ct108_payitem_normal"
+            android:gravity="center"
+            android:inputType="number"
+            android:imeOptions="actionDone"
+            android:maxLength="4"
+            android:paddingLeft="6dp"
+            android:paddingRight="6dp"
+            android:singleLine="true"
+            android:hint="其它金额"
+            android:textColor="@color/ct108_float_text_black"
+            android:textColorHint="@color/ct108_float_hint_text_color"
+            android:textSize="@dimen/text_size_medium_float_util"/>
+    </RelativeLayout>
+</FrameLayout>

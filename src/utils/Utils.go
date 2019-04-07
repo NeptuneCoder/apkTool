@@ -8,6 +8,11 @@ import (
 	"strings"
 )
 
+func GetDirRel() string {
+	path, _ := filepath.Rel("./", "./")
+	fmt.Println("path:", path)
+	return path + "/"
+}
 func KeyBordIn(tip string) string {
 	fmt.Println(tip)
 	var gameId string

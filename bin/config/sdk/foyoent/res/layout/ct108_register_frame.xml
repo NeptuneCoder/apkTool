@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="320dp"
+    android:layout_height="320dp"
+    android:background="@drawable/ct108_login_background"
+    android:orientation="vertical"
+    android:paddingBottom="5dp"
+    android:paddingLeft="0dp"
+    android:paddingRight="0dp"
+    android:paddingTop="0dp" >
+
+    <RelativeLayout
+        android:layout_width="320dp"
+        android:layout_height="40dp" >
+
+        <ImageButton
+            android:id="@+id/back"
+            android:layout_marginLeft="@dimen/back_left_pading"
+            android:layout_width="@dimen/back_width"
+            android:layout_height="@dimen/back_height"
+            android:layout_centerVertical="true"
+            android:background="@drawable/ct108_back" />
+
+        <RelativeLayout
+            android:id="@+id/register_tab"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="55dp"
+            android:layout_marginTop="5dp" >
+
+            <TextView
+                android:id="@+id/registerbyphone"
+                android:layout_width="110dp"
+                android:layout_height="33dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/ct108_registerbyphone"
+                android:textColor="@color/ct108_title_charactor_color"
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/registerbyusername"
+                android:layout_width="110dp"
+                android:layout_height="33dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="120dp"
+                android:gravity="center"
+                android:text="@string/ct108_registerbyusername"
+                android:textColor="@color/ct108_title_charactor_color"
+                android:textSize="16dp" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="60dp"
+        android:paddingTop="-10dp" >
+
+        <ImageView
+            android:id="@+id/line_one"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/ct108_line_short"
+            android:gravity="center" />
+
+        <ImageView
+            android:id="@+id/line_two"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="100dp"
+            android:background="@drawable/ct108_line_short"
+            android:gravity="center"
+            android:visibility="invisible" />
+    </RelativeLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vPager"
+        android:layout_width="320dp"
+        android:layout_height="280dp"
+        android:layout_gravity="center"
+        android:flipInterval="30"
+        android:persistentDrawingCache="animation" />
+
+</LinearLayout>

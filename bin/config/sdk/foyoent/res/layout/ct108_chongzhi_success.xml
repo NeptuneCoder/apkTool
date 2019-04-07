@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:minWidth="290dp"
+    android:minHeight="@dimen/ct108_tongbao_dialog_height"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/ct108_shape_corners_bg_white"
+    >
+
+    <RelativeLayout
+        android:id="@+id/relativelayout_tv"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="111dp">
+        <RelativeLayout
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/textView"
+                android:gravity="center"
+                android:layout_centerHorizontal="true"
+                android:text="通宝充值成功！"
+                android:textSize="18dp"
+                android:textColor="#5c9b0c"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:gravity="center"
+                android:layout_below="@+id/textView"
+                android:layout_marginTop="6dp"
+                android:layout_centerHorizontal="true"
+                android:text="系统将自动为您兑换游戏币"
+                android:textSize="14dp"
+                android:textColor="#868686"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_below="@+id/relativelayout_tv"
+        android:layout_marginBottom="20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/button"
+            android:text="确定"
+            android:gravity="center"
+            android:textSize="16dp"
+            android:textColor="#ffffff"
+            android:background="@drawable/ct108_ic_btn_green_fill"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="19dp"
+            android:layout_width="215dp"
+            android:layout_height="@dimen/ct108_tongbao_btn_height" />
+    </RelativeLayout>
+</RelativeLayout>

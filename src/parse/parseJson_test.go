@@ -14,5 +14,5 @@ func TestReadSdkConfig(t *testing.T) {
 }
 
 func TestReadGamsConfig(t *testing.T) {
-	ReadGamsConfig()
+	ReadGamesConfig()
 }

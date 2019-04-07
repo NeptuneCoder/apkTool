@@ -1,0 +1,126 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="transcutestyle" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@android:color/transparent</item>
+        <!-- 边框 -->
+        <item name="android:windowIsFloating">true</item>
+        <!-- 是否浮现在activity之上 -->
+        <item name="android:windowIsTranslucent">true</item>
+        <!-- 半透明 -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 无标题 -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!-- 背景透明 -->
+        <item name="android:backgroundDimAmount">0.4</item>
+        <item name="android:windowAnimationStyle">@null</item>
+    </style>
+    
+     <style name="transcutestyle2" >
+        <item name="android:windowFrame">@android:color/transparent</item>
+        <!-- 边框 -->
+        <item name="android:windowIsFloating">true</item>
+        <!-- 是否浮现在activity之上 -->
+        <item name="android:windowIsTranslucent">true</item>
+        <!-- 半透明 -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 无标题 -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!-- 背景透明 -->
+        <item name="android:backgroundDimAmount">0.4</item>
+        <item name="android:windowAnimationStyle">@null</item>
+    </style>
+    
+
+    <style name="yxd_edit_hint_init">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/yxd_edit_height</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textColor">@drawable/yxd_gray_656</item>
+        <item name="android:textColorHint">#8e8e8e</item>
+    </style>
+
+    <style name="yxd_login_edittext">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_marginLeft">15dp</item>
+        <item name="android:layout_marginRight">15dp</item>
+        <item name="android:layout_marginTop">16dp</item>
+    </style>
+
+    <style name="yxd_loading_dialog" parent="android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@drawable/yxd_white_fff</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <style name="YXdProgressBar">
+  
+	　　        <item name="android:indeterminateDrawable">@drawable/yxd_anim_progress</item>
+  
+	　　        <item name="android:minWidth">12dip</item>
+  
+	　　        <item name="android:maxWidth">60dip</item>
+  
+	　　        <item name="android:minHeight">12dip</item>
+  
+	　　        <item name="android:maxHeight">60dip</item>
+    </style>
+
+    <style name="YXdProgressBar1">
+  
+	　　        <item name="android:indeterminateDrawable">@drawable/yxd_anim_progress1</item>
+  
+	　　        <item name="android:minWidth">12dip</item>
+  
+	　　        <item name="android:maxWidth">60dip</item>
+  
+	　　        <item name="android:minHeight">12dip</item>
+  
+	　　        <item name="android:maxHeight">60dip</item>
+    </style>
+
+    <style name="yxd_NavPage">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:gravity">center_horizontal</item>
+        <!-- <item name="android:background">@drawable/nav_page</item> -->
+        <item name="android:background">#FFE1E8EB</item>
+    </style>
+    
+    
+     <style name="yxdDialogBase" parent="@android:Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item> 
+        <!--<item name="android:windowBackground">@color/white</item>-->
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+       </style>
+       
+     <style name="scroll_bar_yello_vertical">
+        <item name="android:scrollbarThumbVertical">@drawable/yxd_sb_thumbvertical_yello</item>
+        <item name="android:scrollbarTrackVertical">@drawable/yxd_sb_trackvertical_gray</item>
+        <item name="android:scrollbarFadeDuration">4</item>
+        <item name="android:scrollbarAlwaysDrawVerticalTrack">false</item>
+        <item name="android:scrollbars">vertical</item>
+        <item name="android:scrollbarSize">4dp</item>
+    </style>
+    
+     <style name="scroll_bar_blue_vertical">
+        <item name="android:scrollbarThumbVertical">@drawable/yxd_sb_thumbvertical_blue</item>
+        <item name="android:scrollbarTrackVertical">@drawable/yxd_sb_trackvertical_gray</item>
+        <item name="android:scrollbarFadeDuration">4</item>
+        <item name="android:scrollbarAlwaysDrawVerticalTrack">false</item>
+        <item name="android:scrollbars">vertical</item>
+        <item name="android:scrollbarSize">4dp</item>
+    </style>
+    
+    
+
+</resources>

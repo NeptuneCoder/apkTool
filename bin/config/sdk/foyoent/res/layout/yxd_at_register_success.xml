@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 一键注册成功页面 -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/yxd_sl_bg_white_3dp_down" >
+
+    <TextView
+        android:id="@+id/account_number"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/yxd_edit_height"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/yxd_sl_bg_gray_3dp_down"
+        android:gravity="center_vertical"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:textColor="@drawable/yxd_gray_656"
+        android:textSize="15sp" />
+
+    <ImageView
+        android:id="@+id/iv_divider"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/yxd_divider_height"
+        android:layout_below="@id/account_number"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/yxd_gray_e3e"
+        android:contentDescription="@null" />
+
+    <TextView
+        android:id="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/yxd_edit_height"
+        android:layout_below="@id/iv_divider"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/yxd_sl_bg_gray_3dp_down"
+        android:gravity="center_vertical"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:textColor="@drawable/yxd_gray_656"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/save_screenshot_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/password"
+        android:layout_margin="10dp"
+        android:text="@string/yxd_save_screenshot"
+        android:textColor="@drawable/yxd_blue_22a"
+        android:textSize="14sp" />
+
+    <Button
+        android:id="@+id/go_to_game"
+        style="@style/yxd_login_edittext"
+        android:layout_below="@+id/save_screenshot_text"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/yxd_sl_btn_blue_3dp"
+        android:enabled="true"
+        android:gravity="center"
+        android:text="@string/yxd_go_to_game"
+        android:textColor="@drawable/yxd_white_fff"
+        android:textSize="16sp" />
+
+</RelativeLayout>

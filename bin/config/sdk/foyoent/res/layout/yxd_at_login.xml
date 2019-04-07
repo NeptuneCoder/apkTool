@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_login"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/yxd_sl_bg_white_3dp_down" >
+
+    <!-- <include -->
+    <!-- android:id="@+id/rl_title" -->
+    <!-- layout="@layout/yxd_ai_title" /> -->
+    <!-- 填写手机号 -->
+
+    <LinearLayout
+        android:id="@+id/ll_login_admin"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/yxd_edit_height"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/yxd_sl_bg_gray_3dp_up"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <com.yxd.view.ClearEditText
+            android:id="@+id/login_admin"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/yxd_edit_height"
+            android:layout_weight="1"
+            android:background="@drawable/yxd_gray_f5f"
+            android:cursorVisible="true"
+            android:hint="@string/yxd_login_admin"
+            android:imeOptions="actionNext"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:singleLine="true"
+            android:textColor="@drawable/yxd_gray_656"
+            android:textColorHint="#8e8e8e"
+            android:textCursorDrawable="@null"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:id="@+id/btn_account_record"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/yxd_hint"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:src="@drawable/yxd_ic_jiantou_gray_down" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/iv_divider"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/yxd_divider_height"
+        android:layout_below="@id/ll_login_admin"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/yxd_gray_e3e"
+        android:contentDescription="@null" />
+
+    <LinearLayout
+        android:id="@+id/ll_yxd_account_record"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:layout_below="@id/iv_divider"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:orientation="vertical" >
+
+        <ListView
+            android:id="@+id/yxd_account_record"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/yxd_white_fff"
+            android:divider="@drawable/yxd_gray_e3e"
+            android:dividerHeight="0.5dp" />
+    </LinearLayout>
+
+    <!-- 输入密码 -->
+
+    <com.yxd.view.ClearEditText
+        android:id="@+id/login_pass"
+        style="@style/yxd_edit_hint_init"
+        android:layout_below="@id/iv_divider"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/yxd_sl_bg_gray_3dp_down"
+        android:cursorVisible="true"
+        android:gravity="center_vertical"
+        android:hint="@string/yxd_login_pass"
+        android:imeOptions="actionDone"
+        android:inputType="textPassword"
+        android:textCursorDrawable="@null" />
+
+    <!-- 登陆 -->
+
+    <LinearLayout
+        android:id="@+id/login_login_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/login_pass"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/login_regist_btn"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_weight="1"
+            android:background="@drawable/yxd_sl_btn_yellow_3dp"
+            android:enabled="true"
+            android:gravity="center"
+            android:text="@string/yxd_register"
+            android:textColor="@drawable/yxd_white_fff"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/login_login_btn"
+            style="@style/yxd_login_edittext"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_weight="1"
+            android:background="@drawable/yxd_sl_btn_blue_3dp"
+            android:enabled="true"
+            android:gravity="center"
+            android:text="@string/yxd_login"
+            android:textColor="@drawable/yxd_white_fff"
+            android:textSize="16sp" />
+    </LinearLayout>
+    <!-- 找回密码 -->
+
+
+    <!-- <RelativeLayout -->
+    <!-- android:id="@+id/login_lost_pass_layout" -->
+    <!-- android:layout_width="match_parent" -->
+    <!-- android:layout_height="wrap_content" -->
+    <!-- android:layout_below="@+id/login_login_btn" -->
+    <!-- android:layout_marginLeft="15dp" -->
+    <!-- android:layout_marginRight="15dp" -->
+    <!-- android:layout_marginTop="6dp" > -->
+
+    <TextView
+        android:id="@+id/login_lost_pass_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/login_login_layout"
+        android:layout_marginTop="6dp"
+        android:background="@null"
+        android:paddingBottom="15dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="10dp"
+        android:text="@string/yxd_lost_pass"
+        android:textColor="@drawable/yxd_gray_aaa"
+        android:textSize="14sp" />
+
+</RelativeLayout>

@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#ffd1dce9"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" 
+             android:textColor="#FF000000"
+            android:text="请输入商户号:"/>
+        <EditText android:id="@+id/senderId"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:hint="703450"
+            android:paddingLeft="5dp"
+            android:textColor="#FF000000"
+            android:background="@android:color/transparent"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" 
+             android:textColor="#FF000000"
+            android:text="请输入签名串:"/>
+        <EditText android:id="@+id/senderKey"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPhonetic"
+            android:hint="abcdefg"
+            android:paddingLeft="5dp"
+            android:textColor="#FF000000"
+            android:background="@android:color/transparent"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" 
+             android:textColor="#FF000000"
+            android:text="请输入支付手机号:"/>
+        <EditText android:id="@+id/payerMobileNo"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:paddingLeft="5dp"
+            android:textColor="#FF000000"
+            android:background="@android:color/transparent"/>
+    </LinearLayout>
+     <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#FF000000"
+                android:text="请输入卡类型渠道:" />
+
+            <EditText
+                android:id="@+id/payChannel"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:textColor="#FF000000"
+                android:paddingLeft="5dp" />
+        </LinearLayout>
+         <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#FF000000"
+                android:text="请输入支付类型:" />
+
+            <EditText
+                android:id="@+id/payType"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:paddingLeft="5dp"
+                android:textColor="#FF000000" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#FF000000"
+                android:text="请输入商户会员:" />
+
+            <EditText
+                android:id="@+id/merchantMemberId"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:paddingLeft="5dp"
+                android:textColor="#FF000000" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#FF000000"
+                android:text="充值方标识:" />
+
+            <EditText
+                android:id="@+id/depositId"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:textSize="15sp"
+                android:paddingLeft="5dp"
+                android:textColor="#FF000000" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#FF000000"
+                android:text="充值方标识类型:" />
+           
+			<Spinner android:id="@+id/depositIdType" 
+			    android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:textColor="#FF000000" />
+        </LinearLayout>
+    
+    <ImageView android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="#5BDACA"/>
+
+    <ListView
+        android:id="@+id/ProductListView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:cacheColorHint="#00000000"
+        android:divider="#5BDACA" 
+        android:dividerHeight="1dp">
+    </ListView>
+
+</LinearLayout>

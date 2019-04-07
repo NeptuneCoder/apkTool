@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="toolbar_text_size">17dp</dimen>
+    <dimen name="text_size_medium">16dp</dimen>
+    <dimen name="text_size_large">18dp</dimen>
+    <dimen name="text_size_huge">19dp</dimen>
+    <dimen name="text_size_small">14dp</dimen>
+    <dimen name="game_name_size">14dp</dimen>
+    <dimen name="text_size_micro">12dp</dimen>
+    <dimen name="text_size_userinfo">15dp</dimen>
+    <dimen name="text_size_more_micro">10dp</dimen>
+    <dimen name="icon_size_small">54dp</dimen>
+    <dimen name="icon_size_small_for_round">44dp</dimen>
+    <dimen name="icon_size">68dp</dimen>
+    <dimen name="icon_size_bigger">68dp</dimen>
+    <dimen name="detail_icon_size">72dp</dimen>
+    <dimen name="tab_height">48dp</dimen>
+    <dimen name="halo_btn_padding">15dp</dimen>
+    <dimen name="common_margin_small">3dp</dimen>
+    <dimen name="common_margin">6dp</dimen>
+    <dimen name="common_margin_xlarge">14dp</dimen>
+    <dimen name="common_margin_large">10dp</dimen>
+    <dimen name="common_margin_medium">8dp</dimen>
+    <dimen name="common_padding">5dp</dimen>
+    <dimen name="common_padding_small">3dp</dimen>
+    <dimen name="btn_margin">36dp</dimen>
+    <dimen name="btn_height">40dp</dimen>
+    <dimen name="bottombar_height">48dp</dimen>
+    <dimen name="home_page_avatar">36dp</dimen>
+    <dimen name="line_spacing">3dp</dimen>
+    <dimen name="profile_avatar">94dp</dimen>
+    <dimen name="list_item_height">94dp</dimen>
+    <dimen name="progressbar_height">3dp</dimen>
+    <dimen name="setting_title_width">140dp</dimen>
+    <dimen name="setting_tab_height">46dp</dimen>
+    <dimen name="divder_height">1dp</dimen>
+    <dimen name="mygame_item">80dp</dimen>
+    <dimen name="home_bar_height">55dp</dimen>
+    <dimen name="home_bar_text_height">35dp</dimen>
+    <dimen name="home_bar_btn_width">60dp</dimen>
+    <dimen name="home_padding">6dp</dimen>
+    <dimen name="home_padding_large">8dp</dimen>
+    <dimen name="home_common_margin_small">10dp</dimen>
+    <dimen name="home_common_margin_top_small">7dp</dimen>
+    <dimen name="home_common_margin_micro">6dp</dimen>
+    <dimen name="home_common_margin">14dp</dimen>
+
+    <dimen name="ct108_tcy_home_common_margin_large">20dp</dimen>
+    <dimen name="ct108_tcy_home_mygame_gv_height">116dp</dimen>
+    <dimen name="ct108_tcy_home_recomgame_gv_height">330dp</dimen>
+    <dimen name="ct108_tcy_home_recomgame_gv_repeat_height">300dp</dimen>
+    <dimen name="ct108_tcy_home_list_padding">20dp</dimen>
+    <dimen name="ct108_tcy_home_padding_bottom">50dp</dimen>
+    <dimen name="ct108_tcy_common_margin_new">10dp</dimen>
+    <dimen name="ct108_tcy_common_margin_new_small">4dp</dimen>
+    <dimen name="ct108_tcy_common_margin_new_micro">3dp</dimen>
+    <dimen name="ct108_tcy_common_margin_new_more_mirco">2dp</dimen>
+    <dimen name="ct108_tcy_common_padding_new">20dp</dimen>
+    <dimen name="ct108_tcy_toolbar_text_margin">-20dp</dimen>
+    <dimen name="ct108_tcy_bottom_bar_height">60dp</dimen>
+    <dimen name="ct108_tcy_list_end_padding_bottom">60dp</dimen>
+    <dimen name="ct108_tcy_repeat_line_margin_top">48dp</dimen>
+
+    <dimen name="ct108_tcy_avatar_list_size">48dp</dimen>
+    <dimen name="ct108_tcy_tab_icon_size">36dp</dimen>
+    <dimen name="ct108_tcy_banner_subtitle_height">36dp</dimen>
+    <dimen name="ct108_tcy_banner_tag_tv_height">28dp</dimen>
+    <dimen name="ct108_tcy_splash_bottom">250dp</dimen>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="ct108_tcy_activity_horizontal_margin">16dp</dimen>
+    <dimen name="ct108_tcy_activity_vertical_margin">16dp</dimen>
+
+    <!--圆角布局-->
+    <dimen name="ct108_tcy_corner_size_big">7dp</dimen>
+
+    <!--导航栏关闭按钮-->
+    <dimen name="ct108_close_margin">15dp</dimen>
+</resources>

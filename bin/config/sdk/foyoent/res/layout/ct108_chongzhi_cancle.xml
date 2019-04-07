@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/ct108_shape_corners_bg_white"
+    android:minHeight="@dimen/ct108_tongbao_dialog_height"
+    android:minWidth="290dp"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:layout_width="255dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/relativelayout_tv"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp">
+
+        <TextView
+            android:id="@+id/button_close"
+            android:layout_width="100dp"
+            android:layout_height="@dimen/ct108_tongbao_btn_height"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="19dp"
+            android:background="@drawable/ct108_ic_btn_gray_fill"
+            android:gravity="center"
+            android:text="关闭订单"
+            android:textColor="#ffffff"
+            android:textSize="16dp" />
+
+        <TextView
+            android:id="@+id/button_repay"
+            android:layout_width="100dp"
+            android:layout_height="@dimen/ct108_tongbao_btn_height"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/ct108_ic_btn_green_fill"
+            android:gravity="center"
+            android:text="重新支付"
+            android:textColor="#ffffff"
+            android:textSize="16dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativelayout_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="111dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView"
+            android:layout_centerHorizontal="true"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="6dp"
+            android:gravity="center"
+            android:text="订单未完成，是否继续支付"
+            android:textColor="#868686"
+            android:textSize="14dp" />
+    </RelativeLayout>
+</RelativeLayout>

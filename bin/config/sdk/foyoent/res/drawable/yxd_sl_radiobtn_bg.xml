@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- <item android:state_enabled="true" android:state_checked="true" android:state_pressed="true" -->
+    <!-- android:drawable="@drawable/enabled_on_pressed" /> -->
+
+
+    <!-- <item android:state_enabled="true" android:state_checked="false" android:state_pressed="true" -->
+    <!-- android:drawable="@drawable/enabled_off_pressed" /> -->
+
+
+    <!-- <item android:state_pressed="true"><shape> -->
+    <!-- <solid android:color="@drawable/yxd_gray_e3e" /> -->
+
+
+    <!-- <corners android:bottomLeftRadius="3dp" android:bottomRightRadius="3dp" android:topLeftRadius="3dp" android:topRightRadius="3dp" /> -->
+    <!-- </shape></item> -->
+    <!-- <item android:state_enabled="false"><shape> -->
+    <!-- <solid android:color="@drawable/yxd_gray_e3e" /> -->
+
+
+    <!-- <corners android:bottomLeftRadius="3dp" android:bottomRightRadius="3dp" android:topLeftRadius="3dp" android:topRightRadius="3dp" /> -->
+    <!-- </shape></item> -->
+    <item><shape>
+            <solid android:color="@drawable/yxd_white_fff" />
+
+            <!-- <padding android:bottom="3dp" android:left="3dp" android:right="3dp" android:top="3dp" /> -->
+
+            <stroke android:width="1dp" android:color="@drawable/yxd_black_3e3" />
+
+            <corners android:bottomLeftRadius="3dp" android:bottomRightRadius="3dp" android:topLeftRadius="3dp" android:topRightRadius="3dp" />
+        </shape></item>
+
+</selector>

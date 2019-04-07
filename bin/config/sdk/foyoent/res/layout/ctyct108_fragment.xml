@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/ct108_background"
+    android:orientation="vertical"
+    android:paddingBottom="0dp"
+    android:paddingLeft="0dp"
+    android:paddingRight="0dp"
+    android:paddingTop="3dp" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:gravity="center"
+        android:paddingRight="5dp" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:text="@string/card_pay"
+            android:textColor="@color/ct108_p_title"
+            android:textSize="20dp" />
+
+        <ImageButton
+            android:id="@+id/back"
+            android:layout_width="@dimen/p_shut_down_width"
+            android:layout_height="@dimen/p_shut_down_height"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/ct108_p_shutdown_select" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginTop="3dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingBottom="8dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:text="@string/card_pay_hint"
+            android:textColor="#7d7d7d"
+            android:textSize="16dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="8dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_vertical"
+                    android:text="@string/pay_number"
+                    android:textColor="@color/ct108_p_text_color"
+                    android:textSize="16dp" />
+
+                <EditText
+                    android:id="@+id/cardId"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="50dp"
+                    android:background="@drawable/ct108_p_null"
+                    android:hint="@string/pay_ct_user"
+                    android:imeOptions="flagNoExtractUi"
+                    android:inputType="textVisiblePassword"
+                    android:textColor="@color/ct108_p_title"
+                    android:textColorHint="@color/ct108_p_text_hint_color"
+                    android:textSize="15dp" />
+
+                <LinearLayout
+                    android:layout_width="50dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center"
+                    android:orientation="horizontal" >
+
+                    <ImageButton
+                        android:id="@+id/cardId_clear"
+                        android:layout_width="@dimen/p_clear_width"
+                        android:layout_height="@dimen/p_clear_height"
+                        android:background="@drawable/ct108_p_x_select"
+                        android:visibility="gone" />
+                </LinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ct108_background_line" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="12dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_vertical"
+                    android:text="@string/pay_password"
+                    android:textColor="@color/ct108_p_text_color"
+                    android:textSize="16dp" />
+
+                <EditText
+                    android:id="@+id/password"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="50dp"
+                    android:background="@drawable/ct108_p_null"
+                    android:hint="@string/pay_ct_password"
+                    android:imeOptions="flagNoExtractUi"
+                    android:inputType="textVisiblePassword"
+                    android:textColor="@color/ct108_p_title"
+                    android:textColorHint="@color/ct108_p_text_hint_color"
+                    android:textSize="15dp" />
+
+                <LinearLayout
+                    android:layout_width="50dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center"
+                    android:orientation="horizontal" >
+
+                    <ImageButton
+                        android:id="@+id/cardPassword_clear"
+                        android:layout_width="@dimen/p_clear_width"
+                        android:layout_height="@dimen/p_clear_height"
+                        android:background="@drawable/ct108_p_x_select"
+                        android:visibility="gone" />
+                </LinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ct108_background_line" />
+
+        <RelativeLayout
+            android:id="@+id/linear"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:layout_marginTop="12dp"
+            android:gravity="center"
+            android:paddingBottom="1dp"
+            android:paddingRight="1dp"
+            android:paddingTop="1dp" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:gravity="center_vertical"
+                android:text="@string/pay_verify"
+                android:textColor="@color/ct108_p_text_color"
+                android:textSize="16dp" />
+
+            <EditText
+                android:id="@+id/verify_code"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="50dp"
+                android:background="@drawable/ct108_p_null"
+                android:hint="@string/pay_ct_verify_p"
+                android:imeOptions="flagNoExtractUi"
+                android:inputType="number"
+                android:maxLength="4"
+                android:paddingLeft="5dp"
+                android:textColor="@color/ct108_p_title"
+                android:textColorHint="@color/ct108_p_text_hint_color"
+                android:textSize="15dp" />
+
+            <ImageView
+                android:id="@+id/acquire_verify_image"
+                android:layout_width="90dp"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:paddingBottom="2dp"
+                android:paddingTop="2dp"
+                android:textColor="@color/ct108_p_button_text_color"
+                android:textSize="12dp" />
+        </RelativeLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ct108_background_line" />
+
+        <TextView
+            android:id="@+id/errorLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_gravity="left"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="4dp"
+            android:text="@string/errorCard"
+            android:textColor="@color/ct108_p_red"
+            android:textSize="15dp"
+            android:visibility="invisible" />
+
+        <Button
+            android:id="@+id/pay_now"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/ct108_p_button_select"
+            android:text="@string/pay_now"
+            android:textColor="@color/ct108_p_white"
+            android:textSize="18dp" />
+    </LinearLayout>
+
+</LinearLayout>

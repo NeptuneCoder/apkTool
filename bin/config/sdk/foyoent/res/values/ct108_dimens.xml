@@ -1,0 +1,24 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="back_left_pading">0dp</dimen>
+    <dimen name="shut_down_width">32dp</dimen>
+    <dimen name="shut_down_height">32dp</dimen>
+    <dimen name="back_width">32dp</dimen>
+    <dimen name="back_height">32dp</dimen>
+    <dimen name="clear_width">30dp</dimen>
+    <dimen name="clear_height">30dp</dimen>
+    <dimen name="show_password_width">30dp</dimen>
+    <dimen name="show_password_height">30dp</dimen>
+    <dimen name="up_width">30dp</dimen>
+    <dimen name="up_height">30dp</dimen>
+    <dimen name="ct108_tcy_edittext_leftpadding">5dp</dimen>
+
+    <dimen name="ct108_tcy_red_point_size">8dp</dimen>
+
+    <!--通宝支付弹框UI参数-->
+    <dimen name="ct108_tongbao_btn_height">40dp</dimen>
+    <dimen name="ct108_tongbao_btn_width">125dp</dimen>
+    <dimen name="ct108_tongbao_dialog_height">182dp</dimen>
+    <dimen name="ct108_tongbao_dialog_width">310dp</dimen>
+</resources>

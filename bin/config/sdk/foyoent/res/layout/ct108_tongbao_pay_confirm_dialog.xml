@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:minWidth="@dimen/ct108_tongbao_dialog_width"
+    android:minHeight="@dimen/ct108_tongbao_dialog_height"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/ct108_shape_corners_bg_white"
+    >
+
+    <RelativeLayout
+        android:id="@+id/relativelayout_tv"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="111dp">
+        <TextView
+            android:id="@+id/textView"
+            android:gravity="center"
+            android:layout_centerInParent="true"
+            android:text="是否确认支付?"
+            android:textSize="16dp"
+            android:textColor="#000000"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_below="@+id/relativelayout_tv"
+        android:layout_marginBottom="20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/button_no"
+            android:text="取消"
+            android:gravity="center"
+            android:textSize="16dp"
+            android:textColor="#8e8e8e"
+            android:background="@drawable/ct108_ic_btn_gray"
+            android:layout_width="@dimen/ct108_tongbao_btn_width"
+            android:layout_height="@dimen/ct108_tongbao_btn_height" />
+
+        <View
+            android:id="@+id/view_blank"
+            android:layout_toRightOf="@+id/button_no"
+            android:layout_width="20dp"
+            android:layout_height="1dp"/>
+        <TextView
+            android:layout_toRightOf="@+id/view_blank"
+            android:id="@+id/button_yes"
+            android:text="确认"
+            android:gravity="center"
+            android:textSize="16dp"
+            android:textColor="#ffffff"
+            android:background="@drawable/ct108_ic_btn_green_fill"
+            android:layout_width="@dimen/ct108_tongbao_btn_width"
+            android:layout_height="@dimen/ct108_tongbao_btn_height" />
+    </RelativeLayout>
+</RelativeLayout>

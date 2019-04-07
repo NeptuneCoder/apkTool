@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:background="@drawable/ct108_username_background">
+
+    <ImageView
+        android:id="@+id/delete_item"
+        android:layout_width="38dp"
+        android:layout_height="38dp"
+        android:background="@drawable/ct108_username_list_delete"
+        android:layout_gravity="center"/>
+
+	<TextView 
+	    android:id="@+id/login_username_text"
+	    android:layout_width="match_parent"
+	    android:layout_height="38dp"
+	    android:layout_marginLeft="5dp"
+        android:gravity="center_vertical"
+	    android:textSize="18dp"
+	    android:textColor="@color/ct108_font_color_listview"/>
+</LinearLayout>

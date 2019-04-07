@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="ct108_tcy_corner_size_white_zero">0dp</dimen>
+    <dimen name="ct108_tcy_corner_size_white">6dp</dimen>
+    <dimen name="ct108_tcy_corner_size">5dp</dimen>
+
+    <dimen name="toolbar_height">40dp</dimen>
+
+    <!--textsize begin-->
+    <dimen name="text_size_medium_float_util">16dp</dimen>
+    <dimen name="text_size_large_float_util">18dp</dimen>
+    <dimen name="text_size_huge_float_util">19dp</dimen>
+    <dimen name="text_size_small_float_util">14dp</dimen>
+    <dimen name="game_name_size_float_util">14dp</dimen>
+    <dimen name="text_size_micro_float_util">12dp</dimen>
+    <!--textsize end-->
+
+    <!--pay begin-->
+    <dimen name="ct108_tcy_button_pay_margin_horzatal">70dp</dimen>
+    <dimen name="ct108_tcy_button_pay_margin_vertical">10dp</dimen>
+    <dimen name="ct108_tcy_button_pay_item_width">88dp</dimen>
+    <dimen name="ct108_tcy_button_pay_item_height">55dp</dimen>
+
+    <dimen name="ct108_tcy_pay_margin_v">20dp</dimen>
+
+    <dimen name="ct108_tcy_pay_info_margin_top">10dp</dimen>
+    <!--pay end-->
+
+    <!--悬浮球内容图-->
+    <dimen name="ct108_tcy_floatitem_size">50dp</dimen>
+</resources>

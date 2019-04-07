@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/yxd_dialog_ly"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:background="@drawable/yxd_bg_dialog"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:orientation="vertical">
+
+      <include
+        android:id="@+id/yxd_dlg_head"
+        layout="@layout/yxd_include_dlg_head"
+        android:visibility="gone"/>
+
+      <FrameLayout
+          android:id="@+id/dlg_content"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginLeft="5dp"
+          android:layout_marginRight="5dp"/>
+
+     </LinearLayout>
+
+</LinearLayout>

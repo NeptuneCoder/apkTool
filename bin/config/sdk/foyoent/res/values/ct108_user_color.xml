@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<color name="ct108_ivory">#FFFFF0</color><!--象牙色 -->
+	<color name="ct108_black">#000000</color><!--黑色 -->
+	<color name="ct108_white">#FFFFFF</color><!--白色 -->
+	<color name="ct108_gray">#808080</color><!--灰色 -->
+	<color name="ct108_orange">#FFA500</color><!--橙色 -->
+	<color name="ct108_red">#FF0000</color><!--红色 -->
+	<color name="ct108_darkorange">#FF8C00</color><!--暗桔黄色 -->
+    <color name="ct108_title_charactor_color">#4e4e4e</color>
+    <color name="ct108_text_hint_color">#b9b9b9</color>
+    <color name="ct108_darkgray">#A9A9A9</color><!--暗灰色 -->
+    <color name="ct108_text_color">#4e4e4e</color>
+    <color name="ct108_view_color">#dbdbdb</color>
+    <color name="ct108_button_text_color">#f1880b</color>
+    <color name="ct108_title_button_pressed">#f1880b</color>
+    <color name="ct108_title_button_normal">#fce7ce</color>
+    <color name="ct108_error_hint">#8c2626</color>
+    <color name="ct108_text">#ff2a00</color>
+    <color name="ct108_toast_text">#ffffffff</color>
+    <color name="ct108_modyfy_text">#9f8963</color>
+    <color name="ct108_dark_gray">#7d7d7d</color>
+    <color name="ct108_light_gray">#636363</color>
+    <color name="ct108_green">#12a66d</color>
+</resources>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="ct108_tcy_ibtn_toolbar_back">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">@dimen/toolbar_height</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:src">@drawable/ct108_icon_btn_back</item>
+        <item name="android:paddingRight">9dp</item>
+        <item name="android:paddingLeft">9dp</item>
+        <item name="android:id">@id/ibtn_back</item>
+    </style>
+
+    <style name="ct108_tcy_header_title">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:textSize">18dp</item>
+    </style>
+
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+
+        -->
+    </style>
+    <style name="AppTheme" parent="AppBaseTheme">
+    </style>
+</resources>

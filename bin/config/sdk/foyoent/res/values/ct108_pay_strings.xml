@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="pay_ct_verify_p">点击验证码图片可切换</string>
+    <string name="pay_ct_password">请输入密码：</string>
+    <string name="pay_ct_user">请输入卡号：</string>
+    <string name="errorCard">卡号、密码、验证码均不能为空</string>
+    <string name="pay_title">选择支付方式</string>
+    <string name="loading_p">正在加载</string>
+    <string name="pay_now">立即支付</string>
+
+
+    <string name="reCharge_acount">充值账户</string>
+    <string name="recharge_ways">支付方式：</string>
+    <string name="more_payways">其他支付方式 ></string>
+	<string name="card_pay">畅唐一卡通充值</string>
+	<string name="card_pay_hint">充值后可获得金额以充值卡面额为准</string>
+	<string name="gotocardpay">畅唐一卡通支付 ></string>
+	<string name="pay_number">卡号</string>
+	<string name="pay_password">密码</string>
+	<string name="pay_verify">验证码</string>
+
+    <string name="reCharge_number">待支付：</string>
+    <string name="gain_things">商品名称：</string>
+    <string name="recharge_coupon">优惠券</string>
+    <string name="ct108_pay_recharge_ways">支付方式</string>
+
+    <string name="ct108_payname_1">微信支付</string>
+    <string name="ct108_payname_2">支付宝钱包</string>
+    <string name="ct108_payname_3">网银</string>
+    <string name="ct108_payname_4">通宝支付</string>
+
+    <string name="ct108_coupon_list_title">可用优惠券</string>
+    <string name="ct108_coupon_reget">点击重新获取</string>
+    <string name="ct108_coupon_loading">加载中</string>
+    <string name="ct108_pay_no_coupon">无可用优惠券</string>
+    <string name="ct108_pay_center">同城游充值中心</string>
+    <string name="ct108_string_no_threshold_copon">无门槛</string>
+</resources>

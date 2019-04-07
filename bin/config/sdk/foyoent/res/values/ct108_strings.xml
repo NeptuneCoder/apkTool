@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">FloatUtil</string>
+
+    <string name="ct108_tcy_load_fail">您的网络好像不太给力，请稍后再试</string>
+</resources>

@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/ct108_shape_corners_bg_white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/layer1"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:gravity="center"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp">
+
+        <TextView
+            android:id="@+id/pay_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="@string/ct108_pay_center"
+            android:textColor="@color/ct108_pay_frame_title_v"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+
+        <RelativeLayout
+            android:id="@+id/back"
+            android:layout_width="45dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true">
+            <ImageView
+                android:layout_width="@dimen/ct108_pay_dialog_close_icon_width"
+                android:layout_height="@dimen/ct108_pay_dialog_close_icon_width"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/ct108_pay_dialog_margin_horizatal_h"
+                android:layout_alignTop="@+id/backPay"
+                android:background="@drawable/ct108_shutdown" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/layer2"
+        android:layout_below="@+id/layer1"
+        android:layout_height="@dimen/ct108_pay_grayline_height"
+        android:layout_width="match_parent"
+        android:background="#e2e1e1" />
+
+    <LinearLayout
+        android:id="@+id/layer3"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/layer2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/ct108_pay_dialog_title_height"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_pro_name"
+                style="@style/ct108_pay_frame_v_title"
+                android:text="@string/gain_things" />
+
+            <TextView
+                android:id="@+id/ctpay_tb"
+                style="@style/ct108_pay_frame_v_title"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@+id/tv_pro_name" />
+
+            <View
+                style="@style/ct108_quickpay_dialog_line"
+                android:background="#e2e1e1" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_payway"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/ct108_pay_dialog_title_height"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/ct108_pay_frame_v_title"
+                android:text="@string/ct108_pay_recharge_ways" />
+
+            <TextView
+                android:id="@+id/more_payways"
+                style="@style/ct108_pay_frame_v_title"
+                android:layout_alignParentRight="true"
+                android:paddingRight="13dp"
+                android:text="通宝支付" />
+
+            <ImageView
+                android:id="@+id/more_payways_iv"
+                android:layout_width="13dp"
+                android:layout_height="13dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ct108_go_pay"
+                android:visibility="visible" />
+            <View
+                style="@style/ct108_quickpay_dialog_line"
+                android:background="#e2e1e1" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_choose_coupon"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/ct108_pay_dialog_title_height"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/ct108_pay_frame_v_title"
+                android:text="@string/recharge_coupon" />
+
+            <TextView
+                android:id="@+id/ctpay_coupon"
+                style="@style/ct108_pay_frame_v_title"
+                android:layout_alignParentRight="true"
+                android:paddingRight="13dp"
+                android:text="" />
+
+            <ImageView
+                android:id="@+id/iv_coupon_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/ctpay_coupon"
+                android:gravity="center_vertical"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/ct108_go_coupon_list"
+                android:layout_width="13dp"
+                android:layout_height="13dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ct108_go_pay"
+                android:visibility="gone" />
+            <View
+                style="@style/ct108_quickpay_dialog_line"
+                android:background="#e2e1e1" />
+        </RelativeLayout>
+
+
+
+        <RelativeLayout
+            android:id="@+id/paynow"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:padding="0dp"
+            android:layout_marginTop="35dp"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/ct108_p_button_select"
+            android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/paybuttontext"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="支付300通宝"
+                    android:layout_centerInParent="true"
+                    android:textColor="@color/ct108_p_white"
+                    android:textSize="16dp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</RelativeLayout>

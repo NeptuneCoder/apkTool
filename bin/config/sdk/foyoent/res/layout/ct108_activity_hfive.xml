@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rootview"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ct108_shape_corners_bg_white"
+    android:orientation="vertical">
+
+    <!--<ScrollView-->
+        <!--android:layout_below="@+id/toolbar_rl"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:background="@drawable/ct108_shape_corners_bg"-->
+        <!--android:layout_height="match_parent">-->
+        <!--<RelativeLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent">-->
+            <WebView
+                android:id="@+id/wv_base"
+                android:layout_below="@+id/toolbar_rl"
+                android:layout_marginBottom="@dimen/ct108_tcy_corner_size"
+                android:background="@drawable/ct108_shape_corners_bg_white"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            </WebView>
+
+
+    <RelativeLayout
+        android:id="@+id/loading_bar_parent"
+        android:layout_below="@+id/toolbar_rl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:background="@drawable/ct108_shape_corners_bg_white">
+        <FrameLayout
+            android:id="@+id/loading_bar"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center_vertical" >
+
+            <ProgressBar
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:indeterminateDrawable="@drawable/ct108_progress_inverse" />
+
+            <Button
+                android:id="@+id/continue_game"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/ct108_pro_loading_logo"
+                android:gravity="center" />
+        </FrameLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/toolbar_rl"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbar_height"
+        android:background="@drawable/ct108_shape_corners_bg_top"
+        android:layout_alignParentTop="true">
+
+        <ImageButton
+            android:id="@+id/ibtn_back"
+            style="@style/ct108_tcy_ibtn_toolbar_back"
+            android:onClick="onViewClick" />
+        <TextView
+            android:layout_toRightOf="@+id/ibtn_back"
+            android:id="@+id/textview_pagetitle"
+            style="@style/ct108_tcy_header_title"
+            android:text="页面名称"
+            />
+        <ImageView
+            android:id="@+id/imagebutton_close"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:onClick="onViewClick"
+            android:src="@drawable/ct108_icon_close" />
+    </RelativeLayout>
+    <!--</RelativeLayout>-->
+    <!--</ScrollView>-->
+    <RelativeLayout
+        android:id="@+id/empty_view_parent"
+        android:layout_below="@+id/toolbar_rl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:background="@drawable/ct108_shape_corners_bg_white">
+
+        <com.ct108.opensdk.floatutil.widget.EmptyView
+            android:id="@+id/empty_view"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+    </RelativeLayout>
+</RelativeLayout>

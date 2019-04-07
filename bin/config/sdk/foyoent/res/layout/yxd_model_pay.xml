@@ -1,0 +1,243 @@
+<!-- <ScrollView -->
+<!-- xmlns:tools="http://schemas.android.com/tools" -->
+<!-- android:layout_width="match_parent" -->
+<!-- android:layout_height="match_parent" -->
+<!-- > -->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_pay"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/yxd_sl_bg_white_3dp_down"
+    android:paddingBottom="10dp" >
+
+    <LinearLayout
+        android:id="@+id/v1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/product_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@drawable/yxd_black_3e3"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:text="￥"
+            android:textColor="@drawable/yxd_yellow_ff7" />
+
+        <TextView
+            android:id="@+id/product_subject"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:textColor="@drawable/yxd_yellow_ff7" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/v2"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/yxd_divider_height"
+        android:layout_below="@id/v1"
+        android:background="@drawable/yxd_gray_e3e" />
+
+    <TextView
+        android:id="@+id/tv_prompt1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/v2"
+        android:layout_gravity="left|center_vertical"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="10dp"
+        android:text="请选择要模拟的支付结果"
+        android:textColor="@drawable/yxd_red_f76"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/v4"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/yxd_divider_height"
+        android:layout_below="@id/tv_prompt1"
+        android:background="@drawable/yxd_gray_e3e" />
+
+    <LinearLayout
+        android:id="@+id/ll_zfb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/v4"
+        android:layout_centerVertical="true"
+        android:orientation="horizontal"
+        android:paddingBottom="10dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="10dp"
+        android:paddingTop="10dp" >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|center_vertical"
+            android:layout_weight="1"
+            android:text="模拟成功"
+            android:textColor="@drawable/yxd_black_3e3"
+            android:textSize="16sp" />
+
+        <CheckBox
+            android:id="@+id/zfb_select"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/yxd_sl_radiobtn_bg"
+            android:button="@drawable/yxd_sl_radiobtn"
+            android:scaleX="0.7"
+            android:scaleY="0.7" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/v3"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/yxd_divider_height"
+        android:layout_below="@id/ll_zfb"
+        android:background="@drawable/yxd_gray_e3e" />
+
+    <LinearLayout
+        android:id="@+id/ll_sheng"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/v3"
+        android:layout_centerVertical="true"
+        android:orientation="horizontal"
+        android:paddingBottom="10dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="10dp"
+        android:paddingTop="10dp" >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|center_vertical"
+            android:layout_weight="1"
+            android:text="模拟失败"
+            android:textColor="@drawable/yxd_black_3e3"
+            android:textSize="16sp" />
+
+        <CheckBox
+            android:id="@+id/sheng_select"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/yxd_sl_radiobtn_bg"
+            android:button="@drawable/yxd_sl_radiobtn"
+            android:scaleX="0.7"
+            android:scaleY="0.7" />
+    </LinearLayout>
+    
+    <TextView
+        android:id="@+id/v5"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/yxd_divider_height"
+        android:layout_below="@id/ll_sheng"
+        android:background="@drawable/yxd_gray_e3e" />
+    
+    <LinearLayout
+        android:id="@+id/ll_model_pay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/v5"
+        android:layout_centerVertical="true"
+        android:orientation="horizontal"
+        android:paddingBottom="10dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="10dp"
+        android:paddingTop="10dp" >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|center_vertical"
+            android:layout_weight="1"
+            android:text="模拟取消"
+            android:textColor="@drawable/yxd_black_3e3"
+            android:textSize="16sp" />
+
+        <CheckBox
+            android:id="@+id/model_select"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/yxd_sl_radiobtn_bg"
+            android:button="@drawable/yxd_sl_radiobtn"
+            android:scaleX="0.7"
+            android:scaleY="0.7" />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/v6"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/yxd_divider_height"
+        android:layout_below="@id/ll_model_pay"
+        android:background="@drawable/yxd_gray_e3e" />
+    
+    <LinearLayout
+        android:id="@+id/ll_unknow_pay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/v6"
+        android:layout_centerVertical="true"
+        android:orientation="horizontal"
+        android:paddingBottom="10dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="10dp"
+        android:paddingTop="10dp" >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|center_vertical"
+            android:layout_weight="1"
+            android:text="模拟未知"
+            android:textColor="@drawable/yxd_black_3e3"
+            android:textSize="16sp" />
+
+        <CheckBox
+            android:id="@+id/unknow_select"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/yxd_sl_radiobtn_bg"
+            android:button="@drawable/yxd_sl_radiobtn"
+            android:scaleX="0.7"
+            android:scaleY="0.7" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/pay"
+        android:layout_width="fill_parent"
+        android:layout_height="45dp"
+        android:layout_below="@id/ll_unknow_pay"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/yxd_sl_btn_blue_3dp"
+        android:text="执行模拟结果"
+        android:textColor="@drawable/yxd_white_fff"
+        android:textSize="16sp" />
+
+    <!-- <Button -->
+    <!-- android:id="@+id/check" -->
+    <!-- android:layout_width="fill_parent" -->
+    <!-- android:layout_height="wrap_content" -->
+    <!-- android:layout_margin="10dp" -->
+    <!-- android:onClick="check" -->
+    <!-- android:text="检查账户" -->
+    <!-- tools:ignore="HardcodedText" /> -->
+
+</RelativeLayout> <!-- </ScrollView> -->

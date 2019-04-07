@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="ct108_tcy_color_white">#ffffff</color>
+    <color name="ct108_tcy_theme_color">#70c900</color>
+
+    <!--PlatPayActivity-->
+    <color name="ct108_tcy_payitem_notclick_money">#787878</color>
+    <color name="ct108_tcy_payitem_notclick_tongbao">#aaaaaa</color>
+    <color name="ct108_tcy_payitem_click_money">#ffffff</color>
+    <color name="ct108_tcy_payitem_click_tongbao">#cdfb94</color>
+
+    <color name="ct108_float_text_black">#000000</color>
+    <color name="ct108_float_hint_text_color">#c9c9c9</color>
+</resources>

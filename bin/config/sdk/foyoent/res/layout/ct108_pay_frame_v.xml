@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="@drawable/ct108_shape_corners_bg_white"
+              android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:gravity="center"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp">
+
+        <RelativeLayout
+            android:id="@+id/backPay"
+            android:layout_width="45dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true">
+
+            <ImageView
+                android:layout_width="@dimen/ct108_pay_dialog_back_icon_width"
+                android:layout_height="@dimen/ct108_pay_dialog_back_icon_width"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/ct108_pay_close_btn_margin"
+                android:src="@drawable/ct108_p_back"/>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/pay_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="@string/pay_title"
+            android:textColor="@color/ct108_pay_frame_title_v"
+            android:textSize="16dp"
+            android:textStyle="bold"/>
+
+        <RelativeLayout
+            android:id="@+id/back"
+            android:layout_width="45dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true">
+
+            <ImageView
+                android:layout_width="@dimen/ct108_pay_dialog_close_icon_width"
+                android:layout_height="@dimen/ct108_pay_dialog_close_icon_width"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/ct108_pay_close_btn_margin"
+                android:background="@drawable/ct108_shutdown"/>
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#d4d4d4"/>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/ct108_tcy_corner_size_white_zero">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/ct108_pay_dialog_title_height"
+                android:layout_marginLeft="@dimen/ct108_v_pay_dialog_margin_horizatal_h"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_pro_name"
+                    style="@style/ct108_pay_frame_v_title"
+                    android:text="@string/gain_things"/>
+
+                <TextView
+                    android:id="@+id/ctpay_tb"
+                    style="@style/ct108_pay_frame_v_title"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@+id/tv_pro_name"/>
+            </RelativeLayout>
+
+            <View
+                style="@style/ct108_pay_dialog_line"
+                android:background="#e2e1e1"/>
+
+            <RelativeLayout
+                android:id="@+id/rl_choose_coupon"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/ct108_pay_dialog_title_height"
+                android:layout_marginLeft="@dimen/ct108_v_pay_dialog_margin_horizatal_h"
+                android:layout_marginRight="@dimen/ct108_v_pay_dialog_margin_horizatal_h"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/ct108_pay_frame_v_title"
+                    android:text="@string/recharge_coupon"/>
+
+                <TextView
+                    android:id="@+id/ctpay_coupon"
+                    style="@style/ct108_pay_frame_v_title"
+                    android:layout_alignParentRight="true"
+                    android:paddingRight="13dp"
+                    android:text=""/>
+
+                <ImageView
+                    android:id="@+id/iv_coupon_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@+id/ctpay_coupon"
+                    android:gravity="center_vertical"
+                    android:visibility="gone"/>
+
+                <ImageView
+                    android:id="@+id/ct108_go_coupon_list"
+                    android:layout_width="13dp"
+                    android:layout_height="13dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ct108_go_pay"
+                    android:visibility="gone"/>
+            </RelativeLayout>
+
+            <View
+                style="@style/ct108_pay_dialog_line"
+                android:background="#e2e1e1"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/ct108_pay_dialog_title_height"
+                android:layout_marginLeft="@dimen/ct108_v_pay_dialog_margin_horizatal_h"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_pay_info"
+                    style="@style/ct108_pay_frame_v_title"
+                    android:text="@string/reCharge_number"/>
+
+                <TextView
+                    android:id="@+id/ctpay_money"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/tv_pay_info"
+                    android:gravity="center"
+                    android:textColor="@color/ct108_pay_frame_pay_money_color"
+                    android:textSize="@dimen/ct108_pay_dialog_textsize"/>
+
+                <TextView
+                    android:id="@+id/ctpay_tongbao"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/ctpay_money"
+                    android:gravity="center"
+                    android:textColor="@color/ct108_pay_frame_pay_tongbao_color"
+                    android:textSize="@dimen/ct108_pay_dialog_textsize"/>
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="34dp"
+                android:background="@color/ct108_payitem_bg_nomarl"
+                android:orientation="vertical"
+                android:paddingLeft="15dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:layout_centerVertical="true"
+                    android:text="@string/recharge_ways"
+                    android:textColor="#7d7d7d"
+                    android:textSize="16dp"/>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/ct108_pay_shape_corners_bg_gray"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/payitem_0"
+                    style="@style/ct108_pay_frame_v_paywayitem">
+
+                    <ImageView
+                        android:id="@+id/payway_0"
+                        style="@style/ct108_pay_frame_v_payway_icon"
+                        android:visibility="gone"/>
+
+                    <TextView
+                        android:id="@+id/payname_0"
+                        style="@style/ct108_pay_frame_v_title"
+                        android:layout_toRightOf="@id/payway_0"
+                        android:paddingLeft="@dimen/ct108_pay_dialog_payway_name_padding_left"/>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ct108_go_pay"/>
+
+                    <View
+                        style="@style/ct108_pay_dialog_line_no_margin"
+                        android:layout_alignParentBottom="true"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/payitem_1"
+                    style="@style/ct108_pay_frame_v_paywayitem">
+
+                    <ImageView
+                        android:id="@+id/payway_1"
+                        style="@style/ct108_pay_frame_v_payway_icon"
+                        android:visibility="gone"/>
+
+                    <TextView
+                        android:id="@+id/payname_1"
+                        style="@style/ct108_pay_frame_v_title"
+                        android:layout_toRightOf="@id/payway_1"
+                        android:paddingLeft="@dimen/ct108_pay_dialog_payway_name_padding_left"/>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ct108_go_pay"/>
+
+                    <View
+                        style="@style/ct108_pay_dialog_line_no_margin"
+                        android:layout_alignParentBottom="true"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/payitem_2"
+                    style="@style/ct108_pay_frame_v_paywayitem">
+
+                    <ImageView
+                        android:id="@+id/payway_2"
+                        style="@style/ct108_pay_frame_v_payway_icon"
+                        android:visibility="gone"/>
+
+                    <TextView
+                        android:id="@+id/payname_2"
+                        style="@style/ct108_pay_frame_v_title"
+                        android:layout_toRightOf="@id/payway_2"
+                        android:paddingLeft="@dimen/ct108_pay_dialog_payway_name_padding_left"/>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ct108_go_pay"/>
+
+                    <View
+                        style="@style/ct108_pay_dialog_line_no_margin"
+                        android:layout_alignParentBottom="true"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/payitem_3"
+                    style="@style/ct108_pay_frame_v_paywayitem">
+
+                    <ImageView
+                        android:id="@+id/payway_3"
+                        style="@style/ct108_pay_frame_v_payway_icon"
+                        android:visibility="gone"/>
+
+                    <TextView
+                        android:id="@+id/payname_3"
+                        style="@style/ct108_pay_frame_v_title"
+                        android:layout_toRightOf="@id/payway_3"
+                        android:paddingLeft="@dimen/ct108_pay_dialog_payway_name_padding_left"/>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ct108_go_pay"/>
+
+                    <View
+                        style="@style/ct108_pay_dialog_line_no_margin"
+                        android:layout_alignParentBottom="true"/>
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="27dp"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

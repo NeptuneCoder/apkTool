@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ct108_fortest_paynum_hint">输入金额(单位分)</string>
+    <string name="ct108_fortest_product_num"> 第三方游戏币</string>
+    <string name="ct108_fortest_cannot_pay">用户未登录，不能进行支付</string>
+</resources>

@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_register"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/yxd_sl_bg_white_3dp_down"
+    android:paddingBottom="6dp" >
+
+    <TextView
+        android:id="@+id/change_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_margin="10dp"
+        android:text="@string/yxd_hint_1"
+        android:textColor="@drawable/yxd_gray_656"
+        android:textSize="12sp"
+        android:visibility="gone" />
+
+    <!-- 填写手机号 -->
+
+    <RelativeLayout
+        android:id="@+id/rl_account"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/change_text" >
+
+        <com.yxd.view.ClearEditText
+            android:id="@+id/register_phone"
+            style="@style/yxd_edit_hint_init"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/yxd_sl_bg_gray_3dp"
+            android:cursorVisible="true"
+            android:hint="@string/yxd_hint_phone"
+            android:imeOptions="actionDone"
+            android:inputType="number"
+            android:maxLength="11"
+            android:textCursorDrawable="@null" />
+
+        <RelativeLayout
+            android:id="@+id/rl_user_account"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone" >
+
+            <com.yxd.view.ClearEditText
+                android:id="@+id/register_user"
+                style="@style/yxd_edit_hint_init"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/yxd_sl_bg_gray_3dp_up"
+                android:cursorVisible="true"
+                android:hint="@string/yxd_hint_user"
+                android:imeOptions="actionDone"
+                android:textCursorDrawable="@null" />
+
+            <ImageView
+                android:id="@+id/divider_1"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/yxd_divider_height"
+                android:layout_below="@id/register_user"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/yxd_gray_e3e"
+                android:contentDescription="@null" />
+
+            <EditText
+                android:id="@+id/retrieve_new_password"
+                style="@style/yxd_edit_hint_init"
+                android:layout_below="@id/divider_1"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/yxd_sl_bg_gray_3dp_down"
+                android:cursorVisible="true"
+                android:hint="@string/yxd_set_password"
+                android:imeOptions="actionDone"
+                android:maxLength="30"
+                android:paddingRight="40dp"
+                android:textCursorDrawable="@null" />
+
+            <ImageView
+                android:id="@+id/image_password_visibility"
+                android:layout_width="@dimen/yxd_edit_height"
+                android:layout_height="@dimen/yxd_edit_height"
+                android:layout_alignParentRight="true"
+                android:layout_alignTop="@id/retrieve_new_password"
+                android:layout_marginRight="10dp"
+                android:contentDescription="@string/yxd_hint"
+                android:padding="15dp"
+                android:src="@drawable/yxd_ic_eye_unselected" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/register_next_btn"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:layout_below="@id/rl_account"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/yxd_sl_btn_blue_3dp"
+        android:gravity="center"
+        android:text="@string/yxd_next_step"
+        android:textColor="@drawable/yxd_white_fff"
+        android:textSize="16sp" />
+
+    <RelativeLayout
+        android:id="@+id/layout_prompt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/register_next_btn"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:gravity="center_vertical" >
+
+        <LinearLayout
+            android:id="@+id/ll_other_registway"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:orientation="horizontal" >
+        <TextView
+            android:layout_gravity="center_vertical"
+            android:id="@+id/other_register_way_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            android:text="@string/yxd_other_register_way"
+            android:textColor="@drawable/yxd_gray_aaa"
+            android:textSize="13sp"
+             />
+
+        <ImageView
+            android:layout_gravity="center_vertical"
+            android:id="@+id/other_way_image"
+            android:layout_width="45dp"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/yxd_imageview"
+            android:paddingLeft="5dp"
+            android:paddingRight="15dp"
+            android:src="@drawable/yxd_user" />
+        </LinearLayout>
+        <!-- @drawable/yxd_user -->
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/fast_register_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
+                android:paddingRight="5dp"
+                android:paddingTop="10dp"
+                android:text="@string/yxd_one_key_register"
+                android:textColor="@drawable/yxd_gray_aaa"
+                android:textSize="13sp" />
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_gravity="center_vertical"
+                android:contentDescription="@string/yxd_imageview"
+                android:src="@drawable/yxd_right_arrow_gray" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

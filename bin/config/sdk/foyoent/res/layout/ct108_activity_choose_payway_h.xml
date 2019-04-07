@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rootview"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/ct108_shape_corners_tcybg_gray">
+
+    <RelativeLayout
+        android:id="@+id/toolbar_rl"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbar_height"
+        android:background="@drawable/ct108_shape_corners_bg_top">
+
+        <ImageButton
+            style="@style/ct108_tcy_ibtn_toolbar_back"
+            android:id="@+id/ibtn_back"
+            android:onClick="onViewClick"/>
+
+        <TextView
+            style="@style/ct108_tcy_header_title"
+            android:layout_toRightOf="@id/ibtn_back"
+            android:text="充值"
+            />
+    </RelativeLayout>
+    <ScrollView
+        android:layout_below="@+id/toolbar_rl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="12dp" >
+
+            <RelativeLayout
+                android:background="@color/ct108_tcy_color_white"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:orientation="horizontal" >
+
+                <TextView
+                    style="@style/ct108_tcy_pay_textview"
+                    android:layout_alignParentLeft="true"
+                    android:text="结算"
+                    android:layout_marginLeft="@dimen/ct108_tcy_common_margin_new" />
+
+                <TextView
+                    style="@style/ct108_tcy_pay_textview"
+                    android:id="@+id/textview_tongbao_number"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="@dimen/ct108_tcy_common_margin_new"
+                    android:text="1000通宝" />
+            </RelativeLayout>
+
+            <View
+                android:background="@color/ct108_tcy_gray_empty"
+                android:layout_width="match_parent"
+                android:layout_height="1dp" />
+
+            <RelativeLayout
+                android:background="@color/ct108_tcy_color_white"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:orientation="horizontal" >
+
+                <TextView
+                    style="@style/ct108_tcy_pay_textview"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="@dimen/ct108_tcy_common_margin_new"
+                    android:text="支付金额" />
+
+                <TextView
+                    style="@style/ct108_tcy_pay_textview"
+                    android:id="@+id/textview_money_number"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="@dimen/ct108_tcy_common_margin_new"
+                    android:text="1000元"
+                    android:textColor="@color/ct108_tcy_payway_card" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_marginBottom="100dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/textview_title"
+                    android:layout_marginLeft="30dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center_vertical"
+                    android:text="支付方式:"
+                    android:textColor="@color/ct108_tcy_text_pure_gary"
+                    android:textSize="@dimen/text_size_medium" />
+
+                <RelativeLayout
+                    android:layout_below="@+id/textview_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <RelativeLayout
+                        style="@style/ct108_tcy_payway_relativelayout_h"
+                        android:id="@+id/relativelayout_payway_zfb">
+                        <TextView
+                            style="@style/ct108_tcy_payway_textview"
+                            android:id="@+id/textview_payway_zfb"
+                            android:textColor="@color/ct108_tcy_payway_zfb"
+                            android:text="支付宝支付"
+                            android:drawableLeft="@drawable/ct108_icon_pay_zfb"/>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        style="@style/ct108_tcy_payway_relativelayout_h"
+                        android:id="@+id/relativelayout_payway_wx"
+                        android:layout_below="@+id/relativelayout_payway_zfb"
+                        android:layout_marginTop="@dimen/ct108_tcy_common_margin_new">
+                        <TextView
+                            style="@style/ct108_tcy_payway_textview"
+                            android:id="@+id/textview_payway_wechat"
+                            android:textColor="@color/ct108_tcy_payway_wechat"
+                            android:text="微信支付"
+                            android:drawableLeft="@drawable/ct108_icon_pay_wechat"/>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        style="@style/ct108_tcy_payway_relativelayout_h"
+                        android:id="@+id/relativelayout_payway_wy"
+                        android:layout_below="@+id/relativelayout_payway_wx"
+                        android:layout_marginTop="@dimen/ct108_tcy_common_margin_new">
+                        <TextView
+                            style="@style/ct108_tcy_payway_textview"
+                            android:id="@+id/textview_payway_card"
+                            android:textColor="@color/ct108_tcy_payway_card"
+                            android:text="网银支付"
+                            android:drawableLeft="@drawable/ct108_icon_pay_card"/>
+                    </RelativeLayout>
+                </RelativeLayout>
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/loading_bar_parent"
+        android:layout_below="@+id/toolbar_rl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+        <FrameLayout
+            android:id="@+id/loading_bar"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center_vertical" >
+
+            <ProgressBar
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:indeterminateDrawable="@drawable/ct108_p_progress_inverse" />
+
+            <Button
+                android:id="@+id/continue_game"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/ct108_p_logo"
+                android:gravity="center" />
+        </FrameLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

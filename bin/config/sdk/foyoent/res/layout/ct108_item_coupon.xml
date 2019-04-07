@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/coupon_item_root"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/pay_dialog_coupon_right_item_height"
+    android:descendantFocusability="beforeDescendants"
+    android:layout_gravity="center_horizontal"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/ct108_bg_coupon_item"
+        android:orientation="horizontal">
+        <RelativeLayout
+            android:id="@+id/rl_left"
+            android:layout_weight="418"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <RelativeLayout
+                android:layout_centerInParent="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/iv_money"
+                    android:src="@drawable/ct108_pay_coupn_money_icon"
+                    android:layout_alignBottom="@+id/tv_money"
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:layout_marginBottom="5dp"/>
+
+                <TextView
+                    android:id="@+id/tv_money"
+                    android:textSize="28dp"
+                    android:textColor="#ff6501"
+                    android:textStyle="bold"
+                    android:gravity="bottom"
+                    android:layout_toRightOf="@+id/iv_money"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/tv_min_consume"
+                    android:textSize="10dp"
+                    android:textColor="#ff6501"
+                    android:gravity="top"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@+id/tv_money"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <View
+                    android:layout_below="@+id/tv_min_consume"
+                    android:layout_width="5dp"
+                    android:layout_height="4dp"/>
+            </RelativeLayout>
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/rl_right"
+            android:layout_weight="164"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/tv_gamescope"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="@dimen/pay_dialog_coupon_listitem_right_padding"
+                android:layout_marginLeft="@dimen/pay_dialog_coupon_listitem_right_padding"
+                android:textSize="@dimen/pay_dialog_coupon_right_textsize"
+                android:textColor="@color/pay_dialog_coupon_right_textcolor_top"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/tv_period"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="@dimen/pay_dialog_coupon_listitem_right_padding"
+                android:layout_marginLeft="@dimen/pay_dialog_coupon_listitem_right_padding"
+                android:textSize="@dimen/pay_dialog_coupon_right_textsize"
+                android:textColor="@color/pay_dialog_coupon_right_textcolor_bottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <ImageView
+                android:id="@+id/iv_expire"
+                android:src="@drawable/ct108_is_about_to_expire"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:visibility="gone"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

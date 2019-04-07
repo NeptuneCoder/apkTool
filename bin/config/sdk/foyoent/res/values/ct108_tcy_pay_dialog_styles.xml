@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--for choose_payway_activity-->
+    <style name="ct108_tcy_pay_textview">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/text_size_medium</item>
+        <item name="android:textColor">@color/ct108_tcy_text_black</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+
+    <style name="ct108_tcy_payway_textview">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/text_size_large</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_centerInParent">true</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+
+    <style name="ct108_tcy_payway_relativelayout_v">
+        <item name="android:clickable">true</item>
+        <item name="android:background">@drawable/ct108_bg_payitem</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">15dp</item>
+        <item name="android:layout_marginRight">15dp</item>
+    </style>
+
+    <style name="ct108_tcy_payway_relativelayout_h">
+        <item name="android:clickable">true</item>
+        <item name="android:background">@drawable/ct108_bg_payitem</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">60dp</item>
+        <item name="android:layout_marginRight">60dp</item>
+    </style>
+
+    <!--for ct108_pay_frame_v.xml-->
+    <style name="ct108_pay_frame_v_title">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/ct108_pay_dialog_textsize</item>
+        <item name="android:textColor">#333333</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_centerVertical">true</item>
+    </style>
+
+    <style name="ct108_pay_frame_h_paywayitem">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">45dp</item>
+        <item name="android:layout_marginLeft">@dimen/ct108_pay_dialog_margin_horizatal</item>
+        <item name="android:layout_marginRight">@dimen/ct108_pay_dialog_margin_horizatal</item>
+        <item name="android:background">@drawable/ct108_payitem_select</item>
+        <item name="android:visibility">gone</item>
+    </style>
+
+    <style name="ct108_pay_frame_v_paywayitem">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">45dp</item>
+        <item name="android:layout_marginLeft">@dimen/ct108_v_pay_dialog_margin_horizatal_h</item>
+        <item name="android:layout_marginRight">@dimen/ct108_v_pay_dialog_margin_horizatal_h</item>
+        <item name="android:background">@drawable/ct108_payitem_select</item>
+        <item name="android:visibility">visible</item>
+    </style>
+
+    <style name="ct108_pay_frame_v_payway_icon">
+        <item name="android:layout_width">36dp</item>
+        <item name="android:layout_height">36dp</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="ct108_pay_dialog_line">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1px</item>
+        <item name="android:layout_marginLeft">@dimen/ct108_pay_dialog_margin_horizatal_h</item>
+        <item name="android:layout_marginRight">@dimen/ct108_pay_dialog_margin_horizatal_h</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:background">#e2e1e1</item>
+    </style>
+
+    <style name="ct108_quickpay_dialog_line">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1px</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:background">#e2e1e1</item>
+    </style>
+
+    <style name="ct108_pay_dialog_line_no_margin">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1px</item>
+        <item name="android:background">#e2e1e1</item>
+    </style>
+</resources>

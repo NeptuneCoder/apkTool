@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/payitem_root"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="@dimen/ct108_tcy_button_pay_item_width"
+    android:layout_height="@dimen/ct108_tcy_button_pay_item_height"
+    android:descendantFocusability="beforeDescendants">
+
+
+
+    <RelativeLayout
+        android:id="@+id/content"
+        android:layout_margin="4dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/imageview_yunying"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"/>
+
+        <RelativeLayout
+            android:id="@+id/relativelayout_payitem_parent"
+            android:background="@drawable/ct108_payitem_normal"
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <RelativeLayout
+                android:layout_centerInParent="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/textview_item_money"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textColor="@color/ct108_tcy_payitem_notclick_money"
+                    android:gravity="center"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="@dimen/text_size_medium_float_util"
+                    tools:text="10元"/>
+
+                <TextView
+                    android:id="@+id/textview_item_tongbao"
+                    android:layout_below="@+id/textview_item_money"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_centerHorizontal="true"
+                    android:textColor="@color/ct108_tcy_payitem_notclick_tongbao"
+                    android:textSize="@dimen/text_size_micro_float_util"
+                    tools:text="100通宝"/>
+            </RelativeLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+</FrameLayout>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android" >
+    
+	  <item android:state_pressed="true">
+        <shape>
+            <solid android:color="@drawable/yxd_gray_e3e" />
+
+            <corners android:bottomLeftRadius="3dp" android:bottomRightRadius="3dp" android:topLeftRadius="3dp" android:topRightRadius="3dp" />
+            
+               <!-- 描边 -->
+			    <stroke
+			        android:width="0.5dp"
+			        android:color="#E2E2E2"
+			        android:dashWidth="0.5dp"
+			        android:dashGap="0dp"/>
+        </shape>
+   </item>
+   
+   <item android:state_enabled="false">
+       <shape>
+            <solid android:color="@drawable/yxd_gray_e3e" />
+
+            <corners android:bottomLeftRadius="3dp" android:bottomRightRadius="3dp" android:topLeftRadius="3dp" android:topRightRadius="3dp" />
+            
+              <!-- 描边 -->
+			    <stroke
+			        android:width="0.5dp"
+			        android:color="#E2E2E2"
+			        android:dashWidth="0.5dp"
+			        android:dashGap="0dp"/>
+        </shape>
+        
+  </item>
+  
+  <item>
+      <shape>
+            <solid android:color="@drawable/yxd_gray_f5f" />
+
+            <corners android:bottomLeftRadius="3dp" android:bottomRightRadius="3dp" android:topLeftRadius="3dp" android:topRightRadius="3dp" />
+            
+             <!-- 描边 -->
+			    <stroke
+			        android:width="0.5dp"
+			        android:color="#E2E2E2"
+			        android:dashWidth="0.5dp"
+			        android:dashGap="0dp"/>
+        </shape>
+ </item>
+</selector>

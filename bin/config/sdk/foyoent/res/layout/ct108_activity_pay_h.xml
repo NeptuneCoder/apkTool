@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rootview"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:onClick="onViewClick"
+    android:background="@drawable/ct108_shape_corners_bg_white"
+    android:orientation="horizontal">
+
+
+    <ScrollView
+        android:id="@+id/scrollview"
+        android:layout_below="@+id/relativelayout_my_tongbao"
+        android:onClick="onViewClick"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:onClick="onViewClick"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <GridView
+                android:id="@+id/payitems"
+                android:numColumns="4"
+                android:layout_centerHorizontal="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/textview_get_tongbao_number"
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/payitems"
+                android:layout_marginBottom="3dp"
+                android:gravity="center"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/ct108_tcy_payway_card"
+                android:textSize="@dimen/text_size_medium"
+                tools:text="获得1000通宝"/>
+
+
+            <TextView
+                android:id="@+id/button_pay"
+                android:layout_width="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_height="40dp"
+                android:layout_below="@+id/textview_get_tongbao_number"
+                android:layout_marginLeft="@dimen/ct108_tcy_button_pay_margin_horzatal"
+                android:layout_marginRight="@dimen/ct108_tcy_button_pay_margin_horzatal"
+                android:layout_marginBottom="40dp"
+                android:gravity="center"
+                android:background="@drawable/ct108_ic_btn_gray_fill"
+                android:textColor="@color/ct108_white"
+                android:textSize="@dimen/text_size_medium"
+                android:text="支付"/>
+
+            <!--<TextView-->
+                <!--android:id="@+id/textview_tongbaoshuoming"-->
+                <!--android:paddingLeft="@dimen/common_margin"-->
+                <!--android:layout_alignLeft="@+id/button_pay"-->
+                <!--android:layout_marginTop="37dp"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_below="@+id/button_pay"-->
+                <!--android:textColor="@color/ct108_tcy_text_pure_gary"-->
+                <!--android:text="通宝说明"/>-->
+
+            <!--<TextView-->
+                <!--android:paddingLeft="@dimen/common_margin"-->
+                <!--android:paddingTop="20dp"-->
+                <!--android:layout_alignLeft="@+id/button_pay"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginBottom="30dp"-->
+                <!--android:layout_below="@+id/textview_tongbaoshuoming"-->
+                <!--android:textColor="@color/ct108_tcy_text_pure_gary"-->
+                <!--android:text="@string/ct108_tcy_tongbaoshuoming"/>-->
+        </RelativeLayout>
+    </ScrollView>
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/relativelayout_my_tongbao"
+        android:onClick="onViewClick"
+        android:background="#00000000"
+        android:visibility="gone"/>
+
+    <RelativeLayout
+        android:id="@+id/loading_bar_parent"
+        android:layout_below="@+id/toolbar_rl"
+        android:gravity="center"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone">
+        <FrameLayout
+            android:id="@+id/loading_bar"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center_vertical" >
+
+            <ProgressBar
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:indeterminateDrawable="@drawable/ct108_p_progress_inverse" />
+
+            <Button
+                android:id="@+id/continue_game"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/ct108_p_logo"
+                android:gravity="center" />
+        </FrameLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativelayout_my_tongbao"
+        android:background="@drawable/ct108_shape_corners_bg_top"
+        android:layout_height="66dp"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/toolbar_rl"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <RelativeLayout
+            android:layout_toRightOf="@+id/imageview_avatar"
+            android:layout_marginLeft="14dp"
+            android:gravity="center_vertical"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_marginTop="8dp"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:id="@+id/textview_username"
+                android:gravity="center"
+                android:text="helloword"
+                android:textColor="#cdfb94"
+                android:textSize="16dp"
+                />
+            <TextView
+                android:layout_marginBottom="10dp"
+                android:id="@+id/textview_mymoney_number"
+                android:layout_below="@+id/textview_username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_alignParentLeft="true"
+                android:textColor="@color/ct108_tcy_color_white"
+                android:textSize="13dp"
+                android:text="我的通宝:10800"/>
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/imagebutton_close"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:padding="12dp"
+            android:src="@drawable/ct108_icon_close" />
+
+        <com.ct108.opensdk.floatutil.widget.RoundedImageView  xmlns:RoundedImageView="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/imageview_avatar"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="32dp"
+            android:background="@drawable/ct108_ic_head_bg"
+            android:layout_marginStart="32dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            RoundedImageView:riv_corner_radius="25dp"/>
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,40 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    
+    <dimen name="p_back_left_pading">0dp</dimen>
+    <dimen name="p_shut_down_width">32dp</dimen>
+    <dimen name="p_shut_down_height">32dp</dimen>
+    <dimen name="p_back_width">32dp</dimen>
+    <dimen name="p_back_height">32dp</dimen>
+    <dimen name="p_clear_width">30dp</dimen>
+    <dimen name="p_clear_height">30dp</dimen>
+    <dimen name="p_show_password_width">30dp</dimen>
+    <dimen name="p_show_password_height">30dp</dimen>
+    <dimen name="p_up_width">30dp</dimen>
+    <dimen name="p_up_height">30dp</dimen>
+    <dimen name="p_edittext_leftpadding">5dp</dimen>
+
+    <dimen name="ct108_pay_dialog_margin_horizatal">18dp</dimen>
+    <dimen name="ct108_v_pay_dialog_margin_horizatal_h">18dp</dimen>
+    <dimen name="ct108_pay_dialog_margin_horizatal_h">20dp</dimen>
+    <dimen name="ct108_pay_dialog_title_height">40dp</dimen>
+    <dimen name="ct108_pay_dialog_close_icon_width">11dp</dimen>
+    <dimen name="ct108_pay_dialog_back_icon_width">13dp</dimen>
+    <dimen name="ct108_pay_dialog_textsize">15dp</dimen>
+
+
+    <dimen name="ct108_pay_dialog_payway_name_padding_left">10dp</dimen>
+
+    <dimen name="pay_dialog_coupon_listitem_right_padding">10dp</dimen>
+    <dimen name="pay_dialog_coupon_list_padding">14dp</dimen>
+
+    <dimen name="pay_dialog_coupon_right_item_height">62dp</dimen>
+    <dimen name="pay_dialog_coupon_right_item_width">290dp</dimen>
+
+    <dimen name="pay_dialog_coupon_right_item_height_total">72dp</dimen>
+    <dimen name="pay_dialog_coupon_right_textsize">12dp</dimen>
+
+    <dimen name="ct108_pay_grayline_height">1px</dimen>
+    <dimen name="ct108_pay_close_btn_margin">15dp</dimen>
+</resources>

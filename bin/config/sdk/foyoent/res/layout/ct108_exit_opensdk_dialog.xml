@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="321dp"
+    android:background="@drawable/ct108_shape_corners_bg_white"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="match_parent"
+        android:layout_height="163dp"
+        android:background="@drawable/ct108_shape_exit_corners_bg_top"
+        android:layout_centerHorizontal="true"
+        android:scaleType="fitXY"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/exit_game"
+            android:layout_width="160dp"
+            android:layout_height="49dp"
+            android:padding="0dp"
+            android:background="@drawable/ct108_shape_corners_bg_bottom_left"
+            android:gravity="center"
+            android:text="@string/ct108_exit_opensdk"
+            android:textColor="@color/ct108_tcy_text_black"
+            android:textSize="@dimen/text_size_medium" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_gravity="center_vertical"
+            android:background="@color/ct108_tcy_gray_empty"
+            android:layout_height="33dp"/>
+
+
+        <Button
+            android:id="@+id/continue_game"
+            android:layout_width="160dp"
+            android:layout_height="49dp"
+            android:padding="0dp"
+            android:background="@drawable/ct108_shape_corners_bg_bottom_right"
+            android:gravity="center"
+            android:text="@string/ct108_continue_opensdk"
+            android:textColor="@color/ct108_tcy_green_complete"
+            android:textSize="@dimen/text_size_medium" />
+    </LinearLayout>
+
+</LinearLayout>

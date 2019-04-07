@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android" >
+     <!--  scroll bar 滚动条颜色   yxd_scrollbar_thumbvertical_blue  -->
+     <!-- 填充 -->  
+    <solid android:color="#25A5FE" /> <!-- 定义填充的颜色值 --> 
+    
+    <!-- 圆角 --> 
+    <corners  android:radius="2dp" /> <!-- 设置四个角的半径 -->  
+</shape>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="ct108_p_white">#FFFFFF</color>
+    <color name="ct108_p_text_color">#8f8f8f</color>
+    <color name="ct108_p_button_text_color">#f1880b</color>
+    <color name="ct108_p_text">#e59035</color>
+    <color name="ct108_p_red">#fe493b</color>
+    <color name="ct108_p_view_color">#dbdbdb</color>
+    <color name="ct108_p_ivory">#FFFFF0</color>
+    <color name="ct108_p_darkgray">#A9A9A9</color>
+    <color name="ct108_p_gray">#808080</color>
+    <color name="ct108_p_black">#000000</color>
+	<color name="ct108_p_title">#4e4e4e</color>
+	<color name="ct108_p_text_hint_color">#b9b9b9</color>
+	<color name="ct108_p_green">#12a66d</color>
+    <color name="ct108_p_forgetpassword_text">#38b06e</color>
+    <color name="ct108_p_toast_text">#ffffffff</color>
+
+    <color name="ct108_pay_frame_title_v">#333333</color>
+    <color name="ct108_payitem_bg_nomarl">#f4f4f4</color>
+    <color name="ct108_payitem_bg_press">#e0e0e0</color>
+
+    <color name="pay_dialog_coupon_right_textcolor_top">#666666</color>
+    <color name="pay_dialog_coupon_right_textcolor_bottom">#999999</color>
+    <color name="pay_frame_coupon_price">#fc7600</color>
+
+    <color name="ct108_pay_frame_pay_money_color">#fb2944</color>
+    <color name="ct108_pay_frame_pay_tongbao_color">#888888</color>
+
+    <color name="pay_dialog_coupon_cannot_use">#666666</color>
+    <color name="pay_dialog_coupon_can_use">#ff6501</color>
+</resources>

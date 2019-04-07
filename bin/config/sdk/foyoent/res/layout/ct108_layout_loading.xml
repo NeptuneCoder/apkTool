@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/fail_reload_rl"
+        android:gravity="center"
+        android:layout_centerInParent="true"
+        android:visibility="visible">
+
+        <ImageView
+            android:id="@+id/reload_iv"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ct108_ic_reload" />
+        <LinearLayout
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_below="@+id/reload_iv"
+            >
+            <TextView
+                android:layout_marginTop="10dp"
+                android:id="@+id/load_fail_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/reload_iv"
+                android:text="@string/ct108_tcy_load_fail"
+                android:textColor="#8e8e8e"
+                android:textSize="@dimen/text_size_small_float_util" />
+            <!--<ImageView-->
+                <!--android:layout_marginTop="10dp"-->
+                <!--android:id="@+id/reload_btn"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_alignBottom="@+id/reload_iv"-->
+                <!--android:layout_below="@+id/load_fail_tv"-->
+                <!--android:layout_centerHorizontal="true"-->
+                <!--android:background="@drawable/ct108_select_btn_reload" />-->
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_register"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/yxd_sl_bg_white_3dp_down"
+    android:paddingBottom="20dp" >
+
+    <TextView
+        android:id="@+id/change_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_margin="10dp"
+        android:text="@string/yxd_hint_1"
+        android:textColor="@drawable/yxd_gray_656"
+        android:textSize="12sp"
+        android:visibility="gone" />
+
+    <!-- 填写手机号 -->
+
+
+    <!-- <com.yxd.view.ClearEditText -->
+    <!-- android:id="@+id/register_phone" -->
+    <!-- style="@style/yxd_edit_hint_init" -->
+    <!-- android:layout_below="@id/change_text" -->
+    <!-- android:layout_marginLeft="10dp" -->
+    <!-- android:layout_marginRight="10dp" -->
+    <!-- android:background="@drawable/yxd_sl_bg_gray_3dp_up" -->
+    <!-- android:cursorVisible="true" -->
+    <!-- android:hint="@string/yxd_hint_phone" -->
+    <!-- android:imeOptions="actionDone" -->
+    <!-- android:inputType="number" -->
+    <!-- android:maxLength="11" -->
+    <!-- android:textCursorDrawable="@null" /> -->
+
+    <LinearLayout
+        android:id="@+id/ll_register_account"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/yxd_edit_height"
+        android:layout_below="@id/change_text"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/yxd_sl_bg_gray_3dp_up"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:singleLine="true"
+            android:text="@string/yxd_account_text"
+            android:textColor="@drawable/yxd_gray_656"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/register_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:textColor="@drawable/yxd_gray_656"
+            android:textSize="15sp" />
+    </LinearLayout>
+    <!-- <item name="android:textSize">15sp</item> -->
+    <!-- <item name="android:singleLine">true</item> -->
+    <!-- <item name="android:textColor">@drawable/yxd_gray_656</item> -->
+    <!-- <item name="android:textColorHint">#8e8e8e</item> -->
+
+    <ImageView
+        android:id="@+id/divider_1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/yxd_divider_height"
+        android:layout_below="@id/ll_register_account"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/yxd_gray_e3e"
+        android:contentDescription="@null" />
+
+    <!-- 输入新密码 -->
+
+    <LinearLayout
+        android:id="@+id/ll_register_pass"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/yxd_edit_height"
+        android:layout_below="@id/divider_1"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/yxd_sl_bg_gray_3dp_down"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:singleLine="true"
+            android:text="@string/yxd_pass_text"
+            android:textColor="@drawable/yxd_gray_656"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/retrieve_new_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:textColor="@drawable/yxd_gray_656"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/below_ll_register_pass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ll_register_pass"
+        android:layout_margin="10dp"
+        android:textColor="@drawable/yxd_blue_21a"
+        android:textSize="13sp"/>
+
+    <Button
+        android:id="@+id/register_next_btn"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:layout_below="@id/below_ll_register_pass"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/yxd_sl_btn_blue_3dp"
+        android:gravity="center"
+        android:text="@string/yxd_go_to_game"
+        android:textColor="@drawable/yxd_white_fff"
+        android:textSize="16sp" />
+
+</RelativeLayout>

@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<config>
+    <param name="merchantId" value="1689" />
+    <param name="merchantAppId" value="1515" />
+    <param name="appId" value="16891505120687" />
+    <param name="key" value="e76f23f2b7e23697d155dd4024ce6f14" />
+    <plugins>
+        <plugin name="com.foyoent.hut.plugin.Foyoent2huUser" type="1" />
+        <plugin name="com.foyoent.hut.plugin.Foyoent2huPay" type="2" />
+    </plugins>
+</config>
