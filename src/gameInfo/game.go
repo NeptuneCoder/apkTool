@@ -9,7 +9,10 @@ import (
 var Channels *model.ChannelArray
 var Game *model.Game
 
-func ReadGameConfig() {
+func init() {
+	readGameConfig()
+}
+func readGameConfig() {
 	gamesConfig, _ := parse.ReadGamesConfig()
 	gamesConfig.PrintlnAll()
 	gameId := utils.KeyBordIn("请选择一个游戏(输入gameId)：")

@@ -11,10 +11,7 @@ import (
 	"utils"
 )
 
-func init() {
-	env.ReadEnvConfig()
-	gameInfo.ReadGameConfig()
-}
+
 func main() {
 
 	apkToolsPath := utils.GetDirRel() + "apktools/"

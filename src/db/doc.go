@@ -1,6 +1,8 @@
-将json中的配置信息放到数据中，该目录下的工具用于获取相关设计的实现
+package db
 
+//将json中的配置信息放到数据中，该目录下的工具用于获取相关设计的实现
 
+/*
 
 //用户表
 CREATE TABLE NAME TAB_USER(
@@ -91,36 +93,4 @@ _id INT NOT NULL AUTO_INCREMENT,
 )
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ */

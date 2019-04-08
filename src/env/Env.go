@@ -10,7 +10,11 @@ import (
 
 var Env *model.Environment
 
-func ReadEnvConfig() error {
+func init() {
+	readEnvConfig()
+}
+
+func readEnvConfig() error {
 	s := utils.GetDirRel()
 	fmt.Println(s)
 	data, err := atfile.ReadConfig(s, "Environment.json")

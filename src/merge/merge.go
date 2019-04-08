@@ -6,6 +6,8 @@ import (
 	"io/ioutil"
 	"log"
 	"model"
+	"os"
+	"path/filepath"
 	"strings"
 	"utils"
 )
@@ -13,6 +15,10 @@ import (
 func MergeAndroidManifest(sdkPath, tempPath string) {
 
 }
+/*
+
+	添加闪屏页面，如果已经存在，则需要删除之前的，添加新的
+ */
 func AddSplashActivity(tempPath string, itemChannel *model.GameChannel) () {
 	if itemChannel.Splash {
 
@@ -34,10 +40,56 @@ func MergeMetaData(tempPath string, channel *model.GameChannel) {
 }
 
 //合并icon
-func MergeIcon(sdkPath, tempPath string, itemChannel *model.GameChannel) {
-	if itemChannel.IsIcon() {
+func MergeIcon(sdkPath, tempPath string, gameChannel *model.GameChannel) {
+	if gameChannel.IsIcon() {
+		androidManifestName := tempPath + "/AndroidManifest.xml"
+		content, err := ioutil.ReadFile(androidManifestName)
+		if err != nil {
+			log.Fatal(err)
+		}
+		rootElement, err := dom4g.LoadByXml(string(content))
+		if err != nil {
+			fmt.Println("err------------------------>:", err)
+			return
+		}
+		appElement := rootElement.Node("application")
+		iconType := "drawable"
+		iconName := "drawable"
+		if s, b := appElement.AttrValue("icon"); b {
+			if "" != s && strings.Contains(s, "drawable") {
+				iconName = strings.ReplaceAll(s, "@drawable/", "")
+				iconType = "drawable"
+			} else if "" != s && strings.Contains(s, "mipmap") {
+				iconName = strings.ReplaceAll(s, "@mipmap/", "")
+				iconType = "mipmap"
+			}
+		}
+		fmt.Println("启动图标-类型：", iconType)
+		fmt.Println("启动图标名称", iconName)
+
+		//迭代图片目标文件，然后处理全部的icon图标
+		//tempPath+"res"
+		iteration(iconName, iconType, sdkPath, tempPath, gameChannel)
 
 	}
+}
+
+/*
+	迭代res目录下所有的存储图片的目录，找到目标图片，对其进行角标合并操作
+ */
+
+func iteration(iconName, iconType string, sdkPath, tempPath string, gameChannel *model.GameChannel) {
+	resPath := tempPath + "/res"
+	iconMarkPath := sdkPath + "/icon/"
+	_ = filepath.Walk(resPath, func(path string, info os.FileInfo, err error) error {
+		if info.IsDir() {
+			if iconMarkPath != "" {
+
+			}
+		}
+		return nil
+	})
+
 }
 
 func AddSplashImg(sdkPath, tempPath string, channel *model.GameChannel, game *model.Game) {

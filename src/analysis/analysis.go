@@ -26,6 +26,7 @@ func ExplainChannels(apkToolsPath, workPath string, game *model.Game, channels [
 
 		fmt.Println("清空temp目录")
 		tempPath := utils.CreateNewFolder(atfile.GetCurrentDirectory() + "/work/temp")
+
 		//复制原始的文件
 		fmt.Println("复制原始文件到新的目录:", tempPath)
 		fmt.Println(tempPath)
@@ -35,17 +36,21 @@ func ExplainChannels(apkToolsPath, workPath string, game *model.Game, channels [
 		fmt.Println("修改包名")
 		newPackageVal := merge.RenamePackage(gameChannel, tempPath)
 		fmt.Println("NewPageName:", newPackageVal)
+
 		fmt.Println("合并资源")
 		// 将配置的jar，res，等资源进行合并
 		fmt.Println("将配置的jar，res，等资源进行合并")
 		fmt.Println(sdkConfig.Config.Operations)
 		merge.MergeSource(sdkPath, tempPath, sdkConfig.Config.Operations)
+
 		//是否添加闪屏页面
 		fmt.Println("添加闪屏图片")
 		merge.AddSplashImg(sdkPath, tempPath, gameChannel, game)
 		customConfig.CreateCustomConfig(tempPath, gameChannel, &sdkConfig.Config)
+
 		//处理Icon图标
 		merge.MergeIcon(sdkPath, tempPath, gameChannel)
+
 		fmt.Println("生成R文件")
 		rjar.ComplieR(apkToolsPath, tempPath, workPath, newPackageVal, &sdkConfig.Config)
 		fmt.Println("jar2smali")
