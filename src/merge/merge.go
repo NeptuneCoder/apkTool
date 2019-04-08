@@ -15,6 +15,7 @@ import (
 func MergeAndroidManifest(sdkPath, tempPath string) {
 
 }
+
 /*
 
 	添加闪屏页面，如果已经存在，则需要删除之前的，添加新的
@@ -81,10 +82,42 @@ func MergeIcon(sdkPath, tempPath string, gameChannel *model.GameChannel) {
 func iteration(iconName, iconType string, sdkPath, tempPath string, gameChannel *model.GameChannel) {
 	resPath := tempPath + "/res"
 	iconMarkPath := sdkPath + "/icon/"
+	var size int
 	_ = filepath.Walk(resPath, func(path string, info os.FileInfo, err error) error {
 		if info.IsDir() {
-			if iconMarkPath != "" {
-
+			if strings.Contains(info.Name(), "drawable-ldpi") {
+				size = 32
+				iconMarkPath += "drawable-ldpi" + "/" + gameChannel.Icon + ".png"
+			} else if strings.Contains(info.Name(), "drawable-hdpi") {
+				size = 72
+				iconMarkPath += "drawable-hdpi" + "/" + gameChannel.Icon + ".png"
+			} else if strings.Contains(info.Name(), "drawable-xhdpi") {
+				size = 96
+				iconMarkPath += "drawable-xhdpi" + "/" + gameChannel.Icon + ".png"
+			} else if strings.Contains(info.Name(), "drawable-xxhdpi") {
+				size = 144
+				iconMarkPath += "drawable-xxhdpi" + "/" + gameChannel.Icon + ".png"
+			} else if strings.Contains(info.Name(), "drawable-xxxhdpi") {
+				size = 512
+				iconMarkPath += "drawable-xxxhdpi" + "/" + gameChannel.Icon + ".png"
+			} else if strings.Contains(info.Name(), "mipmap-ldpi") {
+				size = 32
+				iconMarkPath += "drawable-ldpi" + "/" + gameChannel.Icon + ".png"
+			} else if strings.Contains(info.Name(), "mipmap-hdpi") {
+				size = 72
+				iconMarkPath += "drawable-hdpi" + "/" + gameChannel.Icon + ".png"
+			} else if strings.Contains(info.Name(), "mipmap-xhdpi") {
+				size = 96
+				iconMarkPath += "drawable-xhdpi" + "/" + gameChannel.Icon + ".png"
+			} else if strings.Contains(info.Name(), "mipmap-xxhdpi") {
+				size = 144
+				iconMarkPath += "drawable-xxhdpi" + "/" + gameChannel.Icon + ".png"
+			} else if strings.Contains(info.Name(), "mipmap-xxxhdpi") {
+				size = 512
+				iconMarkPath += "drawable-xxxhdpi" + "/" + gameChannel.Icon + ".png"
+			} else { // 默认为drawable-xxhdpi
+				size = 144
+				iconMarkPath += "drawable-xxhdpi" + "/" + gameChannel.Icon + ".png"
 			}
 		}
 		return nil
