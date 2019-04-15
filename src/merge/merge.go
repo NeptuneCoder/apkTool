@@ -22,7 +22,20 @@ func MergeAndroidManifest(sdkPath, tempPath string) {
  */
 func AddSplashActivity(tempPath string, itemChannel *model.GameChannel) () {
 	if itemChannel.Splash {
-
+		xmlPath := tempPath + "/AndroidManifest.xml"
+		buf, _ := ioutil.ReadFile(xmlPath)
+		rootElement, _ := dom4g.LoadByXml(string(buf))
+		var filter *dom4g.Element
+		application := rootElement.Node("application")
+		activitys := application.Nodes("activity")
+		for _, v := range activitys {
+			filter = v.Node("intent-filter")
+			if filter != nil {
+				fmt.Println(filter.Name())
+				v.RemoveAttr("intent-filter")
+			}
+		}
+		ioutil.WriteFile(xmlPath, []byte(rootElement.SyncToXml()), 0777)
 	}
 }
 func MergeMetaData(tempPath string, channel *model.GameChannel) {

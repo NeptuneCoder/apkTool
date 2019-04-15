@@ -43,9 +43,10 @@ func ExplainChannels(apkToolsPath, workPath string, game *model.Game, channels [
 		fmt.Println(sdkConfig.Config.Operations)
 		merge.MergeSource(sdkPath, tempPath, sdkConfig.Config.Operations)
 
-		//是否添加闪屏页面
+		//是否添加闪屏图片
 		fmt.Println("添加闪屏图片")
 		merge.AddSplashImg(sdkPath, tempPath, gameChannel, game)
+		//创建配置文件
 		customConfig.CreateCustomConfig(tempPath, gameChannel, &sdkConfig.Config)
 
 		//处理Icon图标
@@ -53,12 +54,16 @@ func ExplainChannels(apkToolsPath, workPath string, game *model.Game, channels [
 
 		fmt.Println("生成R文件")
 		rjar.ComplieR(apkToolsPath, tempPath, workPath, newPackageVal, &sdkConfig.Config)
+
 		fmt.Println("jar2smali")
 		jar2smali.Jar2Smali(apkToolsPath, tempPath)
+
 		fmt.Println("合并meta-data")
 		merge.MergeMetaData(tempPath, gameChannel)
 
+		fmt.Println("添加启动页面")
 		merge.AddSplashActivity(tempPath, gameChannel)
+
 		merge.MergeAndroidManifest(sdkPath, tempPath)
 		replace.ReplacePkgManifest(tempPath, newPackageVal)
 		utils.CreateOutDir()
