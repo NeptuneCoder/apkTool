@@ -159,8 +159,8 @@ type GameChannel struct {
 	Id            string     `json:id` //渠道号
 	Splash        bool       `json:splash`
 	SplashImgName string     `json:splashImgName`
-	Param         []Param    `json:param`
-	MetaData      []MetaData `json:metaData`
+	Param         []Param    `json:param`    //渠道参数，最后生成到aksdk_config.xml中的map元素
+	MetaData      []MetaData `json:metaData` //渠道参数，最后生成到AndroidManifest.xml中的meta-data元素
 }
 
 func (gameChannel *GameChannel) IsIcon() bool {

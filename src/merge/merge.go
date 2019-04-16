@@ -102,7 +102,7 @@ func MergeMetaData(tempPath string, channel *model.GameChannel) {
 		metaData.AddAttr("android:value", data.Value)
 		appNode.AddNode(metaData)
 	}
-	ioutil.WriteFile(xmlPath, []byte(rootElement.SyncToXml()), 0777)
+	_ = ioutil.WriteFile(xmlPath, []byte(rootElement.SyncToXml()), 0777)
 }
 
 //合并icon
