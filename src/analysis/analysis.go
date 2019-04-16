@@ -11,6 +11,7 @@ import (
 	"parse"
 	"replace"
 	"rjar"
+	"sdkcfg"
 	"utils"
 )
 
@@ -64,7 +65,8 @@ func ExplainChannels(apkToolsPath, workPath string, game *model.Game, channels [
 		merge.AddSplashActivity(tempPath, gameChannel)
 
 		merge.MergeAndroidManifest(sdkPath, tempPath, game)
-		replace.ReplacePkgManifest(tempPath, newPackageVal,gameChannel)
+		replace.ReplacePkgManifest(tempPath, newPackageVal, gameChannel)
+		sdkcfg.CreateSdkConfigXml(gameChannel, sdkConfig, tempPath)
 		utils.CreateOutDir()
 	}
 }
