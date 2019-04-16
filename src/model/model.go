@@ -34,10 +34,12 @@ type Game struct {
 	ApktoolVersion string `json:apktoolVersion`
 	Debug          bool   `json:debug`
 	Folder         string `json:folder`
-	Foyoentid      string `json:foyoentid`
-	GameMainName   string `json:gameMainName`
+	FoyoentId      string `json:foyoentid`
+	GameMainName   string `json:gameMainName` //游戏主页面的全称
 	Id             int    `json:id`
 	Orientation    string `json:orientation`
+	Url            string `json:url`
+	StatisticUrl   string `json:statisticUrl` //统计的url
 }
 
 func (game *Game) GetApktoolVersion() string {

@@ -43,15 +43,16 @@ func MergeAndroidManifest(sdkPath, tempPath string, game *model.Game) {
 
 }
 
-func AddSplashActivity(tempPath string, itemChannel *model.GameChannel) {
-	RemoveDefaultSplashActivity(tempPath, itemChannel)
+func AddSplashActivity(tempPath string, itemChannel *model.GameChannel) string {
+	return RemoveDefaultSplashActivity(tempPath, itemChannel)
 }
 
 /*
 	添加闪屏页面，如果已经存在，则需要删除之前的，添加新的
 	添加闪屏页，则移除之前的启动页
  */
-func RemoveDefaultSplashActivity(tempPath string, itemChannel *model.GameChannel) () {
+func RemoveDefaultSplashActivity(tempPath string, itemChannel *model.GameChannel) string {
+	var activityName = ""
 	if itemChannel.Splash {
 		xmlPath := tempPath + "/AndroidManifest.xml"
 		buf, _ := ioutil.ReadFile(xmlPath)
@@ -75,7 +76,7 @@ func RemoveDefaultSplashActivity(tempPath string, itemChannel *model.GameChannel
 					fmt.Println("移除启动的intent-filter", "b0 = ", b0, "   b1 = ", b1)
 				}
 
-				activityName, _ := v.AttrValue("name")
+				activityName, _ = v.AttrValue("name")
 				fmt.Println("activityName:", activityName)
 			}
 			v2, _ := v.AttrValue("name")
@@ -88,6 +89,7 @@ func RemoveDefaultSplashActivity(tempPath string, itemChannel *model.GameChannel
 		content := rootElement.SyncToXml()
 		ioutil.WriteFile(xmlPath, []byte(content), 0777)
 	}
+	return activityName
 }
 
 func MergeMetaData(tempPath string, channel *model.GameChannel) {
@@ -103,6 +105,7 @@ func MergeMetaData(tempPath string, channel *model.GameChannel) {
 		appNode.AddNode(metaData)
 	}
 	_ = ioutil.WriteFile(xmlPath, []byte(rootElement.SyncToXml()), 0777)
+
 }
 
 //合并icon

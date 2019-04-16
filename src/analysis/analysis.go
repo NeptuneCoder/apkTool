@@ -62,11 +62,11 @@ func ExplainChannels(apkToolsPath, workPath string, game *model.Game, channels [
 		merge.MergeMetaData(tempPath, gameChannel)
 
 		fmt.Println("添加启动页面")
-		merge.AddSplashActivity(tempPath, gameChannel)
+		maniActivityName := merge.AddSplashActivity(tempPath, gameChannel)
 
 		merge.MergeAndroidManifest(sdkPath, tempPath, game)
 		replace.ReplacePkgManifest(tempPath, newPackageVal, gameChannel)
-		sdkcfg.CreateSdkConfigXml(gameChannel, sdkConfig, tempPath)
+		sdkcfg.CreateSdkConfigXml(gameChannel, sdkConfig, game, maniActivityName, tempPath)
 		utils.CreateOutDir()
 	}
 }
