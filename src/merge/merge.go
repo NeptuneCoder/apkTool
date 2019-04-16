@@ -12,19 +12,46 @@ import (
 	"utils"
 )
 
-func MergeAndroidManifest(sdkPath, tempPath string) {
+func MergeAndroidManifest(sdkPath, tempPath string, game *model.Game) {
+	manifestName := "landscape"
+	manifestName = strings.ToLower(game.Orientation)
+	sdkManifestNamePath := sdkPath + "/manifest/" + manifestName + ".xml"
+	buf, err := ioutil.ReadFile(sdkManifestNamePath)
+	if err != nil {
+		return
+	}
+	configElement, err := dom4g.LoadByXml(string(buf))
+	if err != nil {
+
+		return
+	}
+
+	xmlPath := tempPath + "/AndroidManifest.xml"
+	buf, _ = ioutil.ReadFile(xmlPath)
+	rootElement, _ := dom4g.LoadByXml(string(buf))
+
+	permissionConfig := configElement.Node("permissionConfig")
+	for _, v1 := range permissionConfig.AllNodes() {
+		rootElement.AddNode(v1)
+	}
+	applicationConfig := configElement.Node("applicationConfig")
+	for _, v1 := range applicationConfig.AllNodes() {
+		_ = rootElement.Node("application").AddNode(v1)
+	}
+	content := rootElement.SyncToXml()
+	_ = ioutil.WriteFile(xmlPath, []byte(content), 0777)
 
 }
 
 func AddSplashActivity(tempPath string, itemChannel *model.GameChannel) {
-	RemoveDefualtSplashActivity(tempPath, itemChannel)
+	RemoveDefaultSplashActivity(tempPath, itemChannel)
 }
 
 /*
 	添加闪屏页面，如果已经存在，则需要删除之前的，添加新的
 	添加闪屏页，则移除之前的启动页
  */
-func RemoveDefualtSplashActivity(tempPath string, itemChannel *model.GameChannel) () {
+func RemoveDefaultSplashActivity(tempPath string, itemChannel *model.GameChannel) () {
 	if itemChannel.Splash {
 		xmlPath := tempPath + "/AndroidManifest.xml"
 		buf, _ := ioutil.ReadFile(xmlPath)
@@ -52,7 +79,6 @@ func RemoveDefualtSplashActivity(tempPath string, itemChannel *model.GameChannel
 				fmt.Println("activityName:", activityName)
 			}
 			v2, _ := v.AttrValue("name")
-			fmt.Println("activityName:", v2)
 			if "com.foyoent.FoyoentSPlashActivity" == v2 {
 				v.AddNode(main)
 				v.AddNode(launcher)
@@ -60,7 +86,6 @@ func RemoveDefualtSplashActivity(tempPath string, itemChannel *model.GameChannel
 
 		}
 		content := rootElement.SyncToXml()
-		fmt.Println(content)
 		ioutil.WriteFile(xmlPath, []byte(content), 0777)
 	}
 }
