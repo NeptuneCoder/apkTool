@@ -6,7 +6,6 @@ import (
 	"customConfig"
 	"fmt"
 	"github.com/yanghai23/GoLib/atfile"
-	"jar2smali"
 	"merge"
 	"model"
 	"parse"
@@ -56,7 +55,7 @@ func ExplainChannels(apkToolsPath, workPath string, game *model.Game, channels [
 		rjar.ComplieR(apkToolsPath, tempPath, workPath, newPackageVal, &sdkConfig.Config)
 
 		fmt.Println("jar2smali")
-		jar2smali.Jar2Smali(apkToolsPath, tempPath)
+		//jar2smali.Jar2Smali(apkToolsPath, tempPath)
 
 		fmt.Println("合并meta-data")
 		merge.MergeMetaData(tempPath, gameChannel)

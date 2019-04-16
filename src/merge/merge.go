@@ -16,28 +16,55 @@ func MergeAndroidManifest(sdkPath, tempPath string) {
 
 }
 
-/*
+func AddSplashActivity(tempPath string, itemChannel *model.GameChannel) {
+	RemoveDefualtSplashActivity(tempPath, itemChannel)
+}
 
+/*
 	添加闪屏页面，如果已经存在，则需要删除之前的，添加新的
+	添加闪屏页，则移除之前的启动页
  */
-func AddSplashActivity(tempPath string, itemChannel *model.GameChannel) () {
+func RemoveDefualtSplashActivity(tempPath string, itemChannel *model.GameChannel) () {
 	if itemChannel.Splash {
 		xmlPath := tempPath + "/AndroidManifest.xml"
 		buf, _ := ioutil.ReadFile(xmlPath)
 		rootElement, _ := dom4g.LoadByXml(string(buf))
 		var filter *dom4g.Element
+		var main *dom4g.Element
+		var launcher *dom4g.Element
 		application := rootElement.Node("application")
 		activitys := application.Nodes("activity")
 		for _, v := range activitys {
 			filter = v.Node("intent-filter")
 			if filter != nil {
-				fmt.Println(filter.Name())
-				v.RemoveAttr("intent-filter")
+				v1, _ := filter.Node("action").AttrValue("name")
+				v2, _ := filter.Node("category").AttrValue("name")
+				if "android.intent.action.MAIN" == v1 && "android.intent.category.LAUNCHER" == v2 {
+					main = filter.Node("action")
+					launcher = filter.Node("category")
+					b0 := filter.RemoveNode("action")
+					b1 := filter.RemoveNode("category")
+					v.RemoveNode("intent-filter")
+					fmt.Println("移除启动的intent-filter", "b0 = ", b0, "   b1 = ", b1)
+				}
+
+				activityName, _ := v.AttrValue("name")
+				fmt.Println("activityName:", activityName)
 			}
+			v2, _ := v.AttrValue("name")
+			fmt.Println("activityName:", v2)
+			if "com.foyoent.FoyoentSPlashActivity" == v2 {
+				v.AddNode(main)
+				v.AddNode(launcher)
+			}
+
 		}
-		ioutil.WriteFile(xmlPath, []byte(rootElement.SyncToXml()), 0777)
+		content := rootElement.SyncToXml()
+		fmt.Println(content)
+		ioutil.WriteFile(xmlPath, []byte(content), 0777)
 	}
 }
+
 func MergeMetaData(tempPath string, channel *model.GameChannel) {
 	xmlPath := tempPath + "/" + "AndroidManifest.xml"
 	buf, _ := ioutil.ReadFile(xmlPath)
